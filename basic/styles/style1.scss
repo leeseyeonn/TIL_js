@@ -1,0 +1,30 @@
+//외부 scss @import 불러오기
+@use './common.scss' as *;
+
+// 변수 적용 선택자
+main {
+    width: 500px;
+    @include flex-center;
+    @include bg1; /* 공통속성 */
+    background-image: url(); /* 개별 속성 */
+    h1{color:$color-blue;}
+    p {
+        color:$color-red;
+        &:hover {color:$color-blue;} /* &는 바로 앞 선택자 */    
+    }
+    .box {
+        background-color: burlywood;
+        input {
+            &:hover {background-color: chartreuse;}
+            &[type=text] {border: 2px solid $color-blue;}
+            /* &+span {
+                background-color: cornflowerblue; color: orange;
+            } */
+        }
+        span {
+            background-color: cornflowerblue; color: orange;
+            &:nth-child(3) {border: 2px solid red;}
+        }
+    } 
+    
+}
