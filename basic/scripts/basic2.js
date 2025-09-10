@@ -205,6 +205,34 @@ a=++c + 10
 b=--d + 1
 //a=53, b=42, c=43, d=41
 console.log(a,b,c,d);
+
+// 증감 연산자 연습
+let aa=13;
+let bb=14;
+let cc=15;
+let dd=16;
+
+--aa
+bb++
+cc--
+dd--
+//a=12 b=15 c=14 d=15
+console.log(aa,bb,cc,dd);
+
+aa=++bb
+console.log(aa,bb);
+/* --------- */
+// aa:16 bb:16
+cc=aa+bb
+console.log(aa);
+
+c=--aa 
+
+let btn = 10;
+let ytn = 20;
+ytn=btn--
+console.log(btn,ytn);
+
 //연산자 3. 복합대입연산자
 let number =10;
 //number = number +5; /* 211과 같은 의미 */
@@ -215,9 +243,19 @@ console.log(number);
 number +=3; //-> a=a+b -> number=number+3
 console.log(number); 
 
+//복합대입연산자 연습
+let a1 = 10;
+let b2 = 20;
+let c3 = 30;
+let d4 = 40;
+
+
+
 //var number = 1;
 //number +=1;
-//number ++; /* 둘 다 값이 같음 */
+//number ++; /* 둘 다 값이 같음 */ 왜?
+
+
 
 //number += 2;
 //number++;
