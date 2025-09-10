@@ -227,3 +227,48 @@ var f=10;
 var g=f;
 f=30;
 console.log(f);
+
+console.log('----------------')
+//함수
+//1. 내장함수
+/* prompt('함수는?'); */
+/* alert('안녕하세요'); */
+/* print(); */
+
+//2. 사용자 정의 함수
+//    function 함수명(인자){반복구문} --> 인자 생략가능
+//Q1. html, css, js 반복출력
+
+
+/* 함수 밖(전역 스코프) */
+let lang1 ='';
+let lang2 ='';
+let lang3 ='';
+function study_lang(){ /* 함수대기상태 */
+    lang1 = 'html';
+    lang2 = 'CSS';
+    lang3 ='javascript';
+    console.log(`배운언어 : ${lang1+lang2+lang3}`);
+}
+study_lang(); /* 함수 호출상태 */
+
+//함수는 생성(대기)과 호출을 별개로 취급한다//
+console.log(lang1, lang2, lang3);
+lang2 = lang2+'3'; //lang+=3
+console.log(lang2);
+
+
+
+console.log('지역변수와 전역변수');
+let xx =1;
+let yy =0; /* 얜 숫자니까 따옴표 말고 0으로 */
+function func1(){
+    yy = 5;
+    console.log(xx+yy);
+}
+function func2(){
+    let zz = 10;
+    console.log(xx+yy+zz);
+}
+func1()
+func2()
