@@ -1,0 +1,80 @@
+@keyframes move {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row nowrap;
+  background-color: aqua;
+}
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: yellow;
+}
+header nav {
+  color: yellow;
+}
+header nav .gnb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  color: yellow;
+}
+header nav .gnb > li {
+  color: yellow;
+}
+header nav .gnb > li > a {
+  width: 100px;
+  height: 100px;
+  border: 2px solid red;
+  background-color: aqua;
+}
+header nav .gnb > li > a:hover {
+  color: yellow;
+}
+header nav .gnb > li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: orange;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  animation: move 1s infinite alternate-reverse;
+  left: 100px;
+  top: 100px;
+}
+header nav .gnb > li .lnb {
+  background-color: aqua;
+}
+header nav .gnb > li .lnb li {
+  height: 100px;
+}
+header nav .gnb > li .lnb li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: orange;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  animation: move 1s infinite alternate-reverse;
+  right: 100px;
+  top: 100px;
+}
+header nav .gnb > li .lnb li a {
+  width: 100px;
+  height: 100px;
+  border: 2px solid red;
+  background-color: aqua;
+}
+
+/*# sourceMappingURL=basic2.css.map */
