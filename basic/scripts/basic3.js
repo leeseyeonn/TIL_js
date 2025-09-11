@@ -149,7 +149,7 @@ console.log(cardFunc(2,20))
 //익명함수 
 //변수 내 function 키워드를 지정해 생성하는 함수
 
-//일반함수와 익명함수의 차이
+//일반함수와 익명함수의 차이/*  */
 function hello1(user){ /* 일반함수 */
     return alert('hello'+user);
 }
