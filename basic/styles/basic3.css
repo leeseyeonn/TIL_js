@@ -1,0 +1,30 @@
+#slide_container {
+  background-color: gainsboro;
+  width: 800px;
+  overflow: hidden;
+}
+#slide_container .slide_wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  /* width: max-content; or */
+  width: 1600px;
+  transform: translateX(-800px);
+}
+#slide_container .slide_wrap .slide {
+  width: 800px;
+  height: 350px;
+  border-width: 2px;
+  border-style: solid;
+  font-size: 2rem;
+  font-weight: 500;
+}
+#slide_container .slide_wrap .slide1 {
+  border-color: darkgreen;
+}
+#slide_container .slide_wrap .slide2 {
+  border-color: darkmagenta;
+}
+
+/*# sourceMappingURL=basic3.css.map */

@@ -1,0 +1,31 @@
+@mixin slide_w_h_pc {
+    width:800px; height: 350px;
+    border-width:2px;
+    border-style:solid;
+}
+
+@mixin align_setting {
+    display:flex; flex-flow:row nowrap;
+    justify-content: center; align-items: center;
+}
+
+@mixin font_style {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#slide_container {
+    background-color: gainsboro;
+    width: 800px; overflow: hidden;
+    .slide_wrap{
+        @include align_setting;
+        /* width: max-content; or */ width:calc(800px*2);
+        transform: translateX(-800px);
+        .slide {
+            @include slide_w_h_pc;
+            @include font_style;
+        }
+        .slide1 {border-color:darkgreen;}
+        .slide2 {border-color:darkmagenta;}
+    }
+}
