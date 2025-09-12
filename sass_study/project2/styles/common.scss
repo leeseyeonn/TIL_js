@@ -1,0 +1,29 @@
+//공통
+
+@mixin bg {
+    background-size:cover; background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin button {
+    font-size: 1.125rem; font-weight:600;
+    width: 400px; height: 200px; 
+}
+
+@mixin title {
+    font-size: 3rem; line-height: 130%; font-weight: 700;
+}
+
+@mixin sub-title {
+    font-size: 1.25rem; font-weight: 700; margin-top: 15px;
+}
+@mixin button {
+    display: inline-block;
+    width: 250px; height: 50px; font-weight:600;
+    border-radius: 50px; text-align: center; line-height: 50px;
+}
+
+@mixin pst-ab {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: max-content;
+}

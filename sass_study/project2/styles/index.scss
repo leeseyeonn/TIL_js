@@ -1,0 +1,49 @@
+@use './common.scss' as *;
+
+#slide_wrap{
+    .slide_container{
+        width:1360px; height:750px; background-color:#ffffd4;
+        margin: 0 auto; padding: 50px; position: relative;
+        @include bg;
+        .slide {
+            .banner_title {
+                h1 {}
+                p {}
+            }
+            .banner_link {
+                a {}
+                .edu_btn {} 
+                .news_btn {}
+            }
+        }
+        .slide1 {
+            height: 100%;
+            @include bg;
+            background-image: url(./images/slide_background_1.png);
+            background-size: 800px auto; background-position: 120% center;
+            .banner_title {
+                h1 {@include title;}
+                p {@include sub-title;}
+            }
+            .banner_link { 
+                @include pst-ab; bottom: 150px; top:auto; left: 50px;
+                a {@include button;}
+                .edu_btn {background-color: #000; color:#fff;}
+                .news_btn {border: 2px solid #000;}
+            }
+        }
+        .slide_control {
+            .pagenation {
+                span {}
+                .current {}
+                .bar {}
+                .total {}
+            }
+            .control_btn { 
+                a {}
+                .slide_left {}
+                .slide_right {}
+            }
+        }
+    }
+}

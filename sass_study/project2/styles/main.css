@@ -1,0 +1,58 @@
+#slide_wrap .slide_container {
+  width: 1360px;
+  height: 750px;
+  background-color: #ffffd4;
+  margin: 0 auto;
+  padding: 50px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#slide_wrap .slide_container .slide1 {
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./images/slide_background_1.png);
+  background-size: 800px auto;
+  background-position: 120% center;
+}
+#slide_wrap .slide_container .slide1 .banner_title h1 {
+  font-size: 3rem;
+  line-height: 130%;
+  font-weight: 700;
+}
+#slide_wrap .slide_container .slide1 .banner_title p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 15px;
+}
+#slide_wrap .slide_container .slide1 .banner_link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: max-content;
+  bottom: 150px;
+  top: auto;
+  left: 50px;
+}
+#slide_wrap .slide_container .slide1 .banner_link a {
+  display: inline-block;
+  width: 250px;
+  height: 50px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+#slide_wrap .slide_container .slide1 .banner_link .edu_btn {
+  background-color: #000;
+  color: #fff;
+}
+#slide_wrap .slide_container .slide1 .banner_link .news_btn {
+  border: 2px solid #000;
+}
+
+/*# sourceMappingURL=main.css.map */
