@@ -1,11 +1,11 @@
 @use './common.scss' as *;
-
 #slide_wrap{
-    .slide_container{
+    padding-top:50px; overflow: hidden; 
+    .slide_container{/*  border: 2px solid orange;  */position:relative;
         width:1360px; height:750px; background-color:#ffffd4;
-        margin: 0 auto; padding: 50px; position: relative;
+        margin: 0 auto; padding:80px 60px 60px;  border-radius: 30px; 
         @include bg;
-        .slide {
+        .slide {/* border: 2px solid red;  */
             .banner_title {
                 h1 {}
                 p {}
@@ -19,31 +19,68 @@
         .slide1 {
             height: 100%;
             @include bg;
-            background-image: url(./images/slide_background_1.png);
+            background-image: url(./images/slide_background_1.png); 
             background-size: 800px auto; background-position: 120% center;
             .banner_title {
                 h1 {@include title;}
                 p {@include sub-title;}
             }
-            .banner_link { 
-                @include pst-ab; bottom: 150px; top:auto; left: 50px;
-                a {@include button;}
+            .banner_link {/*  border: 2px solid brown; */
+                @include pst-ab; bottom: 150px; top:auto;
+                display: flex; flex-flow: row nowrap; gap: 10px;
+                a {@include button; }
                 .edu_btn {background-color: #000; color:#fff;}
-                .news_btn {border: 2px solid #000;}
+                .news_btn {
+                    img {width: 20px; height: auto; display: block;}
+                    display: flex;              
+                    align-items: center;         
+                    justify-content: center;  gap:5px;
+                    border: 1.5px solid #000;}
             }
         }
-        .slide_control {
+        .slide_control {/* border: 2px solid magenta;  */position: absolute; top: 657px;
+            display: flex; flex-flow: row nowrap;
+            align-items: center; gap: 50px;
             .pagenation {
-                span {}
+                display: flex; flex-flow: row nowrap; align-items: center; gap:10px;
+                span {@include pagenation;}
                 .current {}
-                .bar {}
+                .bar {
+                    display: inline-block; position: relative;
+                    width: 100px; height: 2.5px; background-color:$btn-dark;
+                    &::after { @include bar-ani;
+                        background-color: #000; content: ''; display: block;
+                        position:absolute; left: 0; top: 0; width: 100%; height: 100%;
+                    }
+                }
                 .total {}
             }
-            .control_btn { 
+            .control_btn {display: flex; flex-flow: row nowrap; align-items: center; gap:30px; 
                 a {}
-                .slide_left {}
-                .slide_right {}
+                .slide_left {position: relative; z-index: 8;
+                    &:hover { 
+                        &::before {
+                            content: ''; position: absolute; left: 50%; top: 50%; z-index: 7;
+                            transform: translate(-50%, -50%);
+                            display: block; width: 200%; height: 200%;
+                            background-color:$btn-dark; border-radius: 50%; opacity: 0.2;
+                        }
+                    }
+                    img {}
+                }
+                .slide_right {position: relative; z-index: 8;
+                    &:hover {
+                        &::before {
+                            content: ''; position: absolute; left: 50%; top: 50%; z-index: 7;
+                            transform: translate(-50%, -50%);
+                            display: block; width: 200%; height: 200%;
+                            background-color:$btn-dark; border-radius: 50%; opacity: 0.2;
+                        }
+                    }
+                    img {transform: scaleX(-1);}
+                }
             }
         }
     }
 }
+
