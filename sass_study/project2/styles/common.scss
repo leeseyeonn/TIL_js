@@ -1,5 +1,7 @@
 //공통
 
+$btn-dark:#999;
+
 @mixin bg {
     background-size:cover; background-repeat: no-repeat;
     background-position: center;
@@ -7,7 +9,7 @@
 
 @mixin button {
     font-size: 1.125rem; font-weight:600;
-    width: 400px; height: 200px; 
+    width: 360px; height: 240px; 
 }
 
 @mixin title {
@@ -25,5 +27,27 @@
 
 @mixin pst-ab {
     position: absolute;
-    left: 0; top: 0; width: 100%; height: max-content;
+    left: 60; top: 0; width: auto; height: max-content;
+}
+
+@mixin pagenation {
+    font-size: 1.125rem; font-weight: 600;
+}
+
+@mixin bar-ani { animation: bar 2.5s infinite both;
+
+}
+
+@keyframes bar {
+    0% {width: 0;}
+    100% {width:100%;}
+}
+
+@mixin align-row {
+    display: flex; flex-flow: row nowrap;
+    justify-content: center; align-items: center;
+}
+
+@mixin icon-align {
+    
 }
