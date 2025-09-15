@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인스타그램 실습</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/index.js" defer></script>
+    <style>
+        main {position: relative; z-index: 0;}
+        #popup {z-index: 1;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+        #popup svg {
+            fill:#fff;
+            stroke:#f5f5f5;
+            stroke-width: 5px;
+            overflow:visible;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- 팝업 -->
+        <div id="popup">
+            <svg width="114" height="110" viewBox="0 0 114 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M69.5 109.531V96.7187C78.875 94.0104 86.4271 88.8021 92.1562 81.0937C97.8854 73.3854 100.75 64.6354 100.75 54.8437C100.75 45.0521 97.8854 36.3021 92.1562 28.5937C86.4271 20.8854 78.875 15.6771 69.5 12.9687V0.156235C82.4167 3.0729 92.9375 9.60936 101.063 19.7656C109.188 29.9219 113.25 41.6146 113.25 54.8437C113.25 68.0729 109.188 79.7656 101.063 89.9219C92.9375 100.078 82.4167 106.615 69.5 109.531ZM0.75 73.75V36.25H25.75L57 4.99998V105L25.75 73.75H0.75ZM69.5 80V29.6875C74.3958 31.9792 78.224 35.4167 80.9844 40C83.7448 44.5833 85.125 49.5833 85.125 55C85.125 60.3125 83.7448 65.2344 80.9844 69.7656C78.224 74.2969 74.3958 77.7083 69.5 80Z" />
+            </svg>
+        </div>
+        <!-- 고정 -->
+        <div class="insta_wrap">
+            <!-- 1행 -->
+            <div class="profile">
+                <div class="profile_left">
+                    <a href="#">
+                        <img src="https://i.pinimg.com/736x/fb/e9/a3/fbe9a36c87d82e7fb3f2249876f4eeb7.jpg" alt="프로필방문">
+                        <span class="user_name">username</span>
+                    </a>
+                    
+                </div>
+                <a href="#"><span>더보기</span></a>
+            </div>
+            <!-- 2행 이미지 -->
+            <p class="post"></p>
+            <!-- 3행 좋아요 댓글 공유 스크랩 -->
+            <div class="share">
+                <div class="share_left">
+                    <a href="#"><img src="./images/like_off.png" alt="좋아요"></a>
+                    <a href="#"><img src="./images/comment_off.png" alt="댓글"></a>
+                    <a href="#"><img src="./images/paper_off.png" alt="공유"></a>
+                </div>
+                <a href="#"><span>스크랩</span></a>
+            </div>
+            <!-- 4행 좋아요 닉네임 게시날짜 -->
+            <div class="content">
+                <p class="likes"><em>100</em>likes</p>
+                <p class="name"><span class="user_name">username</span></p>
+                <p class="comment">view all <em>20</em> comments</p>
+                <p class="day"><em>3</em> Days Ago</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
