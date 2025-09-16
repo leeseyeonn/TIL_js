@@ -1,8 +1,132 @@
-.weight {
+@keyframes line {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes belt {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+main {
+  padding-top: 50px;
+  overflow: hidden;
+}
+main .weight {
+  border-radius: 50px;
+  margin-top: 30px;
   width: 700px;
   height: 600px;
   margin: 0 auto;
-  background-color: #CCB9FF;
+  background-color: #aa8cff;
+  position: relative;
+}
+main .weight .content .title {
+  padding-top: 50px;
+}
+main .weight .content .title p {
+  margin: 0 auto;
+  width: 420px;
+  height: 240px;
+}
+main .weight .content .title p::after {
+  display: block;
+  content: "";
+  width: 2px;
+  height: 120px;
+  position: absolute;
+  background-color: lightcoral;
+  top: 24.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: line 2s infinite alternate-reverse;
+  transform-origin: bottom;
+}
+main .weight .content .title p img {
+  width: 100%;
+  height: 100%;
+}
+main .weight .content .title h1 {
+  font-weight: 700;
+  line-height: 110%;
+  text-align: center;
+  font-size: 2.813rem;
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .weight .content .title h2 {
+  background-color: #74FAA2;
+  width: max-content;
+  padding: 10px 40px;
+  border: 1.5px solid #000;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .weight .content .title h2 span:nth-child(1) {
+  animation: opacity 1s infinite alternate-reverse;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+main .weight .content .title h2 span:nth-child(2) {
+  font-size: 0.938rem;
+  font-weight: 600;
+}
+main .weight .content .title em {
+  margin-top: 10px;
+  display: block;
+  padding-top: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+main .weight .content .btn {
+  font-size: 2.5rem;
+  padding: 10px 40px;
+  border-radius: 120px;
+  border: 2px solid #000;
+  width: max-content;
+  background-color: #000;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  width: max-content;
+  margin: 50px auto;
+  line-height: 63px;
+}
+main .weight .content .btn:hover {
+  background-color: #74FAA2;
+  color: #000;
+}
+main .weight .bg_deco_back {
+  background-color: #74FAA2;
+  overflow: hidden;
+  margin-top: 50px;
+}
+main .weight .bg_deco_back .bg_deco {
+  animation: belt 50s infinite linear both;
+  font-size: 1.125rem;
+  padding: 10px;
+  display: flex;
+  flex-flow: row;
+  gap: 50px;
+  width: max-content;
 }
 
 /*# sourceMappingURL=weight.css.map */

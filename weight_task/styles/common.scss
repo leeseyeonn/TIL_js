@@ -1,0 +1,39 @@
+$font-45:2.813rem;
+$font-40:2.5rem;
+$font-30:1.875rem;
+$font-15:0.938rem;
+
+@mixin row-align {
+    display: flex; flex-flow: row; 
+    justify-content: center; align-items: center;
+}
+
+@mixin margin { margin: 0 auto;}
+@mixin borderline {
+    font-size:$font-40; padding:10px 40px; border-radius:120px;
+    border: 2px solid #000; width: max-content;
+}
+
+@mixin input {
+    font-size:$font-40; padding:10px 40px; border-radius:120px;
+    border: 2px solid #000; width: max-content;
+    background-color:#000; font-weight: 700; color: #fff;
+}
+
+@mixin check {border:2px solid red;}
+@mixin check2 {border:2px solid yellow;}
+
+@keyframes line {
+    0% {transform: rotate(30deg);}
+    100% {transform: rotate(-30deg);}
+}
+
+@keyframes opacity {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes belt {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}
