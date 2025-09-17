@@ -1,0 +1,19 @@
+// reponsive. scss
+@use './common.scss' as *;
+
+@media screen and (max-width:1000px){
+    #wrap {
+        main {
+            .path {}
+            .container {
+                @include flex_col; gap:25px; 
+                .overview_img {@include flex_col; align-items: center; gap:10px;
+                .small_thumbnail {@include flex_row;}}
+                .product_img {
+                    .main_img {}
+                }
+            }
+            .content { width:100%; padding:0 15px; }
+        }
+    }
+}
