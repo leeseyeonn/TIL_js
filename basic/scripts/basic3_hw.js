@@ -99,3 +99,10 @@ const jip = (user) => {
     return ('please'+user)
 }
 console.log(jip('jip'))
+
+function add (x,y){
+    let temp = x +y
+    return temp
+}
+
+add (2,3)
