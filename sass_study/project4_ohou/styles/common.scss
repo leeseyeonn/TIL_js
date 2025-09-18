@@ -21,7 +21,7 @@ $gray-color-dark: #292929;
 @mixin flex_col {display:flex; flex-flow: column nowrap; align-items:center;}
 @mixin grid_2_c2r {display:grid;
     grid-template-columns:repeat(2, 1fr);
-    grid-template-rows: repeat(6,1fr);
+    grid-template-rows: repeat(2,1fr);
 }
 @mixin icon24 {width: 24px; height: 24px}
 @mixin icon20 {width: 20px; height: 20px}

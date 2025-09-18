@@ -48,7 +48,7 @@
 #wrap main .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(1, 1fr);
 }
 #wrap main .container .overview_img {
   display: flex;
@@ -120,6 +120,12 @@
 }
 #wrap main .container .content .product_info .right_icon .share svg {
   fill: #bdbdbd;
+}
+#wrap main .container .content .score:hover .star {
+  fill: #b6dafc;
+}
+#wrap main .container .content .score:hover span {
+  color: #b6dafc;
 }
 #wrap main .container .content .score {
   display: flex;

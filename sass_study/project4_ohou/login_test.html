@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        /* 내부스타일 */
+        #loginBtn {width: 300px; height: 50px; background-color: salmon; border-radius: 50px; color:white}
+        #logoutBtn {width: 300px; height: 50px; border:2px solid salmon; border-radius: 50px; color:salmon }
+        .result {font-size: 1.625rem; font-weight: 500;}
+    </style>
+</head>
+<body>
+    <button type="button" id="loginBtn">로그인</button>
+    <button type="button" id="logoutBtn">로그아웃</button>
+    <p class="result"><!-- 출력메세지 --></p>
+    <script>
+        /* 내부스크립트 */
+        //1. 초기상태 (로그아웃)
+        localStorage.setItem('isLogin','false')
+
+        const loginBtn = document.querySelector('#loginBtn')
+        const logoutBtn = document.querySelector('#logoutBtn')
+        const resultP = document.querySelector('p')
+        console.log(loginBtn,logoutBtn,resultP)
+
+        //2. 로그인 버튼 클릭시 로그인 메세지 p 출력
+        loginBtn.addEventListener('click',()=>{
+            //상태변경 (로컬스토리지)
+            localStorage.setItem('isLogin','true')
+            resultStatus(); //변경된 상태값에 따라 메세지 출력
+        })
+
+        //3. 로그아웃 버튼 클릭시 로그아웃 메세지 p 출력 
+        logoutBtn.addEventListener('click',()=>{
+            //상태변경 (로컬스토리지)
+            localStorage.setItem('isLogin','false')
+            resultStatus(); //변경된 상태값에 따라 메세지 출력
+        })
+        
+        //공통 메세지 p 함수
+        function resultStatus(){
+            let statusMsg = ''; /* 초기값 설정 */
+            // 상태를 가져오기
+            let loginStatusValue = localStorage.getItem('isLogin')
+            console.log(loginStatusValue)
+            // 상태에 따라 조건문 분기 제작 (로그인/로그아웃)
+            if(loginStatusValue == 'true'){
+                statusMsg = '로그인 완료'
+            } /* else if(loginStatusValue == 'false'){
+                statusMsg = '로그아웃 됐습니다'
+            } */
+            else {
+                statusMsg = '로그아웃 완료'
+            }
+            return resultP.textContent = statusMsg; /* 대입된 결과가 여기에 출력 */
+        }
+    </script>
+</body>
+</html>

@@ -16,7 +16,7 @@
         }
         .container {display:grid;
             grid-template-columns:repeat(2, 1fr);
-            grid-template-rows: repeat(6,1fr);
+            grid-template-rows: repeat(1,1fr); 
             .overview_img { @include flex_row; align-items:flex-start; gap:10px;
                 .small_thumbnail {@include flex_col;  gap:10px; 
                     a {@include thumbnail_s; overflow:hidden;
@@ -43,7 +43,12 @@
                         }
                     }
                 }
-                .score {@include flex_row; justify-content: center;
+                .score {
+                    &:hover {
+                        .star {fill:#b6dafc}
+                        span {color:#b6dafc}
+                    }
+                    @include flex_row; justify-content: center;
                     .star {fill:$point-color;}
                     span {font-size:$font-size-xs; color:$point-color; font-weight: 600; margin-left:10px;}
                 }
