@@ -1,0 +1,136 @@
+@use './common.scss' as *;
+svg {fill:orange;}
+
+#wrap {@include content_w; overflow: hidden;
+    #path {@include flex_row;
+        svg:nth-child(1) {margin-right:2px;}
+        a:nth-child(2) {font-size:$font-size-12; color:$color-gray-2;}
+        svg:nth-child(3) {margin: 0 10px;}
+        a:nth-child(4) {font-size:$font-size-12;}
+    }
+    #product_wrap {@include grid;
+        #product_image {@include flex-row; gap:20px; @include check2; align-items: flex-start;
+            .thumbnail { @include flex_col; width: max-content; gap: 12px; @include check;
+                .image_control {
+                    svg {}
+                }
+                .thumbnail_images {@include flex_col; gap:20px;
+                    a {@include thumbnail; overflow: hidden;
+                        img {width:100%;}
+                    }
+                }
+            }
+            .main_image {@include main-img; border-radius: 30px; overflow: hidden; @include check;
+                img {height:100%;}
+            }
+        }
+        #content {@include flex_col; gap:40px; align-items: flex-start;
+            .title_price{ 
+                .title {@include flex-row; align-items: flex-start;  margin-bottom: 60px;
+                    .product_info{
+                        .product_title {
+                            font-size:$font-size-30; font-weight: 600; line-height:$line-height-150;
+                            margin-bottom: 20px;
+                        }
+                        p {
+                            font-size:$font-size-14; color:$color-gray-4;
+                        }
+                    }
+                    .share {margin-top:10px;
+                        svg {}
+                    }
+                }
+                .price {
+                    .prime_cost {margin-bottom: 10px;
+                        span:nth-child(1) {font-size:1.25rem; font-weight:$font-weight-sb; color:$color-gray-2;
+                            del {font-size:1.25rem; font-weight:$font-weight-sb; color:$color-gray-2;}
+                        }
+                        span:nth-child(2) {color:$color-gray-2;}
+                    }
+                    .discount_cost {@include flex-row; gap:6px; 
+                        .discount_rate {color:$color-point; font-weight:$font-weight-sb; font-size: $font-size-24;
+                            em {color:$color-point;font-size: $font-size-24; font-weight:$font-weight-sb;}
+                        }
+                        .discount_price {font-weight:$font-weight-sb; font-size: $font-size-24;
+                            em {font-weight:$font-weight-sb; font-size: $font-size-24;}
+                        }
+                        .benefit_price {color:$color-gray-2; font-size: $font-size-14;}
+                        .benefit_info {
+                            svg {}
+                        }
+                    }
+                    .information_card { @include flex-row; gap:14px;
+                        .card {@include card; @include check;
+                            .card_title {margin-left: 30px; font-weight:$font-weight-sb; color:$color-gray-2;}
+                            .card_info {line-height:$line-height-120;}
+                        }
+                        .card1 {
+                            img {@include icon40; margin-left: 30px; margin-top: 20px;}
+                            .membership_benefit {
+                                .card_title {margin-left:0; margin-top: 20px; }
+                                .card_info {}
+                            }
+                        }
+                        .card2 {
+                            .card_title {}
+                            .card_info {}
+                        }
+                        .card3 {
+                            .card_title {}
+                            .card_info {}
+                        }
+                        .card2 {
+                            .card_title {}
+                            .card_info {}
+                        }
+                    }
+                }
+            }
+            .shipping_fee {@include flex-row; padding: 20px 0; border-top: 1px solid $color-gray-2; border-bottom: 1px solid $color-gray-2;
+                p {font-size:$font-size-14; font-weight:$font-weight-sb; color:$color-gray-2; margin-right: 50px;}
+                span {font-size:$font-size-14; font-weight:$font-weight-m;}
+            }
+            .order_info {
+                .order_product_title {font-weight:$font-weight-m;}
+                .control { @in
+                    button {
+                        svg {}
+                    }
+                    .minus {
+                        svg {}
+                    }
+                    .amount {}
+                    .plus {
+                        svg {}
+                    }
+                }
+                .order_cost {
+                    em {}
+                }
+            }
+            .total_price {
+                .total_cost_title {
+                    em {}
+                }
+                .total {
+                    .total_cost {
+                        em {}
+                    }
+                    .total_amount {
+                        .amount {}
+                    }
+                }
+            }
+            .favorite_cart_buy_btn {
+                .favorite {
+                    svg {}
+                }
+                .cart {}
+                .buynow {}
+            }
+            .notice {
+                p {}
+            }
+        }
+    }
+}

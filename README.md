@@ -67,3 +67,5 @@
 * `change` : select태그 변경 시 인식하는 이벤트 종류
 * `selectedIndex` : select의 선택 option index 확인 속성
 * `options[index]` :select의 특정 option 확인 시 속성
+### 페이지네이션 자바스크립트 참고 ###
+* 

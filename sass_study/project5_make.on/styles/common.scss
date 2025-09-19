@@ -1,0 +1,47 @@
+// common.scss
+
+$font-size-12:0.75rem;
+$font-size-14:0.875rem;
+$font-size-16:1rem;
+$font-size-18:1.125rem;
+$font-size-20:1.25rem;
+$font-size-24:1.5rem;
+$font-size-30:1.875rem;
+
+$font-weight-m:500;
+$font-weight-sb:600;
+
+$line-height-120:120%;
+$line-height-150:150%;
+
+$color-point:#FF4519;
+$color-gray-1:#F6F6F6;
+$color-gray-2:#999;
+$color-gray-3:#767676;
+$color-gray-4:#666;
+$color-gray-5:#333;
+
+@mixin check {border: 2px solid red;}
+@mixin check2 {border: 2px solid green;}
+@mixin check3 {border: 2px solid blue;}
+@mixin content_w {max-width: 1400px; min-width: 320px; margin: 0 auto;}
+@mixin flex_row {display: flex; flex-flow:row nowrap; align-items:center;}
+@mixin flex_col {display:flex; flex-flow: column nowrap; align-items:center;}
+@mixin icon18 {width: 18px; height: 18px}
+@mixin icon24 {width: 24px; height: 24px}
+@mixin icon2724 {width: 27px; height: 24px}
+@mixin icon30 {width: 30px; height: 30px}
+@mixin icon40 {width: 40px; height: 40px}
+@mixin card {width:448px; height: 94px;
+    border-radius: 5px; background-color: #f6f6f6;
+    display: flex; flex-flow:row nowrap; align-items:flex-start;
+    gap:14px; font-size:0.875rem;
+}
+@mixin thumbnail {width: 84px; height: 84px;}
+@mixin main-img {width: 508px; height: 696px;}
+@mixin grid {display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+@mixin borderR {border-radius:5px;}
+@mixin btn {padding:20px 0; width: 100%; }
