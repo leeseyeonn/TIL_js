@@ -157,7 +157,6 @@ sizeSelect.disabled = true;
 //7. 색상 -> 사이즈 모두 선택 시  (선택한 인덱스가 0이 아닌 것)
 // 주문 목록 출력 (선택한 색상과 사이즈 모두 출력) - 콘솔 '선택완료'
 
-
 colorSelect.addEventListener('change',()=>{
   /* conlose.log(sizeSelect.selectedIndex) */
   /* conlose.log(sizeSelect.option[0]) */
@@ -206,38 +205,6 @@ cancelBtn.addEventListener('click',()=>{
 })
  */
 
-
-
-
-
-
-
-/* const minusBtn = document.querySelector('.minus')
-const countInput = document.querySelector('.control input')
-const plusBtn = document.querySelector('.plus')
-const totalPrice = document.querySelectorAll('.order_total_price')
-let price = productOptDB[0].price 
-let count = 1;
-
-countInput.value = count;
-console.log(countInput.value)
-console.log(minusBtn,countInput,plusBtn,totalPrice,productOptDB[0].price)
-totalPrice.textContent = price.toLocaleString('ko-kr'); */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //DB불러오기 테스트
 console.log(productOptDB[0].name) //몽쉘 패딩 하네스 올인원
 console.log(productOptDB[0].color[0], productOptDB[0].color[1]) //'블랙','라즈베리'
@@ -265,3 +232,74 @@ colorSelect.appendChild(colorOpt3)
 
 //7. 색상 -> 사이즈 모두 선택 시  (선택한 인덱스가 0이 아닌 것)
 //주문 목록 출력 (선택한 색상과 사이즈 모두 출력)
+
+
+//9. 주문목록 + 클릭 시 재고 수량까지 주문 수량+주문 금액 표시
+/* 필요목록 : +-버튼재고수량 주문수량 주문수량+주문금액, 증가 숫자 데이터 */
+const minusBtn = document.querySelector('#minus_btn')
+const countInput = document.querySelector('.control input')
+const plusBtn = document.querySelector('#plus_btn')
+const totalPriceNum = document.querySelectorAll('.order_total_price')
+console.log(countInput.value)
+console.log(minusBtn,countInput,plusBtn,totalPrice,productOptDB[0].price)
+
+let count = 1; //초기값 설정
+let priceFinal = productOptDB[0].price 
+
+console.log(priceFinal)
+
+countInput.value = count;
+
+console.log(countInput.value)
+
+plusBtn.addEventListener('click',()=>{
+  if(count < productOptDB[0].stock){
+  countInput.value = ++count;
+  console.log(countInput.value)
+  let priceFinal = countInput.value * productOptDB[0].price 
+  console.log(priceFinal)
+  totalPriceNum[0].textContent=priceFinal.toLocaleString('ko-kr');
+  totalPriceNum[1].textContent=priceFinal.toLocaleString('ko-kr');
+}else {
+  alert('최대 구매 수량입니다.')
+}
+})
+
+//10. 주문 목록 - 클릭 시 주문 수량+ 주문 금액 감소 (1이라면 경고창 출력)
+minusBtn.addEventListener('click',()=>{
+  if(count > 1){
+  countInput.value = --count;
+  let priceFinal = countInput.value * productOptDB[0].price 
+  totalPriceNum[0].textContent=priceFinal.toLocaleString('ko-kr');
+  totalPriceNum[1].textContent=priceFinal.toLocaleString('ko-kr');
+  }else {alert('최소 구매 수량은 1개부터 가능합니다.')}
+})
+
+//11. (상품 미 선택 시) 장바구니, 바로구매 클릭 시 '상품 선택하세요' 경고장 출력
+
+const cartBtn = document.querySelector('#cart_btn')
+const buyBtn = document.querySelector('#buy_btn')
+
+/* 클릭을하거나 마우스를 올리거나.. 하는건 이벤트 ㄱㄱ */
+cartBtn.addEventListener('click',()=>{
+  if((colorSelect.selectedIndex == 0)||(sizeSelect.selectedIndex == 0)){ //상품 선택 안한걸 확인하는 조건문
+    alert('상품을 선택하세요')
+  }else{
+    loginkStatus = localStorage.getItem('isLogin')
+    if(loginkStatus =='true'){
+      window.location.href='./cart.html'
+    }else{loginkStatus =='false'}}
+
+  
+})
+
+buyBtn.addEventListener('click',()=>{
+  if((colorSelect.selectedIndex == 0)||(sizeSelect.selectedIndex == 0)){ //상품 선택 안한걸 확인하는 조건문
+    alert('상품을 선택하세요')
+  }else{
+    loginkStatus = localStorage.getItem('isLogin')
+    if(loginkStatus =='true'){
+      window.location.href='./buy_now.html'
+    }else{loginkStatus =='false'}}
+})
+//12. (상품 선택 시) 장바구니, 바로구매 클릭 시  로그인 유무에 따라 다른 페이지로 이동 ✔
