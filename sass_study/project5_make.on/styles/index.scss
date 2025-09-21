@@ -1,27 +1,33 @@
 @use './common.scss' as *;
 svg {fill:orange;}
 
-#wrap {@include content_w; overflow: hidden;
-    #path {@include flex_row;
-        svg:nth-child(1) {margin-right:2px;}
+#wrap {@include content_w; padding-top: 50px;
+    #path {@include flex_row; padding-bottom: 50px;
+        svg:nth-child(1) {margin-right:2px; fill:$color-gray-2;}
         a:nth-child(2) {font-size:$font-size-12; color:$color-gray-2;}
-        svg:nth-child(3) {margin: 0 10px;}
+        svg:nth-child(3) {margin: 0 10px; fill:$color-gray-2;}
         a:nth-child(4) {font-size:$font-size-12;}
     }
     #product_wrap {@include grid;
-        #product_image {@include flex-row; gap:20px; @include check2; align-items: flex-start;
-            .thumbnail { @include flex_col; width: max-content; gap: 12px; @include check;
-                .image_control {
-                    svg {}
+        #product_image {@include flex-row; gap:20px; /* align-items: flex-start; */ align-items: stretch;
+            .thumbnail { @include flex_col; height: max-content;
+                svg {fill: none;}
+                .image_control:nth-child(1) {margin-bottom: 12px;
+                    
                 }
-                .thumbnail_images {@include flex_col; gap:20px;
-                    a {@include thumbnail; overflow: hidden;
-                        img {width:100%;}
+                .thumbnail_images {
+                    @include flex_col; gap:5px;  height: calc(84px * 7 + 6px * 6)-20px; overflow: hidden;position: relative; 
+                    &::after {display: block; content: ''; position: absolute; width: 100%; height: 10%; 
+                        /* background: linear-gradient(transparent,white); */ 
+                        background: linear-gradient(to top, white 40%, transparent 100%);
+                        left:0; bottom: 0; }
+                    a {@include thumbnail;
+                        img {width:100%; height: 100%; object-fit: cover; @include borderR;}
                     }
                 }
             }
-            .main_image {@include main-img; border-radius: 30px; overflow: hidden; @include check;
-                img {height:100%;}
+            .main_image {@include main-img; border-radius: 30px; overflow: hidden; 
+                img {width: 100%;}
             }
         }
         #content {@include flex_col; gap:40px; align-items: flex-start;
@@ -33,17 +39,17 @@ svg {fill:orange;}
                             margin-bottom: 20px;
                         }
                         p {
-                            font-size:$font-size-14; color:$color-gray-4;
+                            font-size:$font-size-16; color:$color-gray-4; line-height:$line-height-120;
                         }
                     }
                     .share {margin-top:10px;
-                        svg {}
+                        svg {fill:$color-gray-6;}
                     }
                 }
                 .price {
                     .prime_cost {margin-bottom: 10px;
                         span:nth-child(1) {font-size:1.25rem; font-weight:$font-weight-sb; color:$color-gray-2;
-                            del {font-size:1.25rem; font-weight:$font-weight-sb; color:$color-gray-2;}
+                            del {font-size:1.25rem; font-weight:$font-weight-m; color:$color-gray-2;}
                         }
                         span:nth-child(2) {color:$color-gray-2;}
                     }
@@ -56,80 +62,88 @@ svg {fill:orange;}
                         }
                         .benefit_price {color:$color-gray-2; font-size: $font-size-14;}
                         .benefit_info {
-                            svg {}
+                            svg {fill:$color-gray-2;}
                         }
                     }
-                    .information_card { @include flex-row; gap:14px;
-                        .card {@include card; @include check;
-                            .card_title {margin-left: 30px; font-weight:$font-weight-sb; color:$color-gray-2;}
-                            .card_info {line-height:$line-height-120;}
+                    .information_card {@include flex-row; gap:14px; margin-top:40px; 
+                        .card { @include card; width: 450px; height: 100px;
+                            .card_title {@include card-title;}
+                            .card_info {@include card-info;}
                         }
                         .card1 {
-                            img {@include icon40; margin-left: 30px; margin-top: 20px;}
+                            img {@include icon40; margin-bottom: 13px;}
                             .membership_benefit {
-                                .card_title {margin-left:0; margin-top: 20px; }
+                                .card_title {margin-bottom: 5px;}
                                 .card_info {}
                             }
                         }
-                        .card2 {
+                        /* .card2 {
                             .card_title {}
                             .card_info {}
                         }
-                        .card3 {
+                        .card2 , .card3, .card4 {
                             .card_title {}
                             .card_info {}
+                        } */
+                    }
+                }
+            }
+            .shipping_fee { width: 100%;
+                dl {@include flex-row; padding: 20px 0; border-top: 1px solid $color-gray-0; border-bottom: 1px solid $color-gray-0;
+                    dt {font-size:$font-size-14; font-weight:$font-weight-sb; color:$color-gray-2; margin-right: 50px;}
+                    dd {font-size:$font-size-14; font-weight:$font-weight-m;}
+                }
+            }
+            .order_info { border: 1px solid $color-gray-0; @include flex-col; align-items: flex-start; padding:24px; gap:40px; width: 100%; @include borderR;
+                .order_product_title {font-weight:$font-weight-m; line-height:$line-height-150;}
+                .control_order_cost {@include flex-row; width: 100%; justify-content: space-between;
+                    .control {@include flex-row; width: max-content; height: 35px; border: 1.5px solid $color-gray-0; 
+                        button {
+                            svg {}
                         }
-                        .card2 {
-                            .card_title {}
-                            .card_info {}
+                        .minus {
+                            svg {}
                         }
+                        .amount {width: 35px; height: 35px; text-align: center; border: 1.5px solid $color-gray-0;}
+                        .plus {
+                            svg {}
+                    }
+                }
+                .order_cost {font-size:$font-size-20; font-weight: $font-weight-sb;
+                    em {font-weight: $font-weight-sb;}
+                }
+                }
+            }
+            .total_price { @include flex-row; align-items:flex-end; justify-content: space-between; width: 100%;
+                .total_cost_title {font-weight:$font-weight-sb;
+                    em {font-weight:$font-weight-sb;}
+                }
+                .total { @include flex-row; align-items:flex-end; gap:5px;
+                    .total_cost { font-size:$font-size-30; font-weight:$font-weight-b;
+                        em {font-weight:$font-weight-b;}
+                    }
+                    .total_amount {font-weight:$font-weight-m;
+                        .amount {font-weight:$font-weight-m;}
                     }
                 }
             }
-            .shipping_fee {@include flex-row; padding: 20px 0; border-top: 1px solid $color-gray-2; border-bottom: 1px solid $color-gray-2;
-                p {font-size:$font-size-14; font-weight:$font-weight-sb; color:$color-gray-2; margin-right: 50px;}
-                span {font-size:$font-size-14; font-weight:$font-weight-m;}
-            }
-            .order_info {
-                .order_product_title {font-weight:$font-weight-m;}
-                .control { @in
-                    button {
-                        svg {}
-                    }
-                    .minus {
-                        svg {}
-                    }
-                    .amount {}
-                    .plus {
-                        svg {}
-                    }
+            .favorite_cart_buy_btn {@include flex-row; width: 100%; 
+                button {@include border-line; } 
+                .favorite {height: 100%; @include borderR; margin-right: 5px;
+                    svg {padding:0 20px; fill:$color-gray-6; }
                 }
-                .order_cost {
-                    em {}
-                }
-            }
-            .total_price {
-                .total_cost_title {
-                    em {}
-                }
-                .total {
-                    .total_cost {
-                        em {}
-                    }
-                    .total_amount {
-                        .amount {}
-                    }
-                }
-            }
-            .favorite_cart_buy_btn {
-                .favorite {
-                    svg {}
-                }
-                .cart {}
-                .buynow {}
+                .btn {@include btn;}
+                .cart {border-radius:5px 0 0 5px;}
+                .buynow {background-color:$color-gray-6; color:$color-white; border-radius:0 5px 5px 0}
             }
             .notice {
-                p {}
+                ul {
+                li {font-size:$font-size-14; color:$color-gray-2;
+                    line-height:$line-height-150;
+                    padding-left: 15px; position:relative;
+                &::before {position: absolute; content: '•';  left: 0; top: 0;}
+                }
+                }
             }
         }
     }
