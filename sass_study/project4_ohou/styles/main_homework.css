@@ -114,9 +114,6 @@
 #wrap main .container .content .product_info .right_icon .scrap .bookmark {
   fill: #bdbdbd;
 }
-#wrap main .container .content .product_info .right_icon .scrap.active .bookmark {
-  fill: #59AFFF;
-}
 #wrap main .container .content .product_info .right_icon .scrap span {
   color: #828c94;
   font-size: 0.625rem;
@@ -176,9 +173,6 @@
   font-weight: 500;
   display: none;
 }
-#wrap main .container .content .price_wrap .discount .info.active {
-  display: block;
-}
 #wrap main .container .content .price_wrap .price_deliver {
   margin-top: 10px;
 }
@@ -189,9 +183,6 @@
 #wrap main .container .content .price_wrap .price_deliver img {
   width: 60px;
   height: 15px;
-}
-#wrap main .container .content .price_wrap.active .info {
-  display: block;
 }
 #wrap main .container .content .benefit_ship {
   width: 100%;
@@ -468,4 +459,4 @@
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main_homework.css.map */

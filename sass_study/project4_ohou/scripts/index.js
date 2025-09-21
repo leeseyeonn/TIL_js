@@ -112,6 +112,8 @@ reviewBtn[1].addEventListener('click',(e)=>{
 })
  */
 
+
+
 //4. 가격정보 (i) 클릭 시 정보 팝업 출력 / 숨기기
 const infoIcon = document.querySelector('.discount .info_icon')
 const infoMsg = document.querySelector('.discount .info')

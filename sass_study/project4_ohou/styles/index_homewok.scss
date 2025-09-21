@@ -1,0 +1,166 @@
+// index scss
+@use './common.scss' as *;
+
+#wrap { @include content_w;
+    header { height: 52px; padding: 0 80px; @include flex_row; gap:10px; border:1px solid $gray-color-light-1; border-left:0; border-right:0;
+        a {font-weight: 500;}
+    }
+    main {
+        .path {padding: 14px 0;
+            a {position: relative; padding-right: 12px;
+                &::after {
+                    @include after_before; content: '>'; right:0; left: auto; top:3px; font-size:$font-size-xs; 
+                }
+                &:last-child::after {display: none;}
+            }
+        }
+        .container {display:grid;
+            grid-template-columns:repeat(2, 1fr);
+            grid-template-rows: repeat(1,1fr); 
+            .overview_img { @include flex_row; align-items:flex-start; gap:10px;
+                .small_thumbnail {@include flex_col;  gap:10px; 
+                    a {@include thumbnail_s; overflow:hidden;
+                        img {width: 100%;}
+                    }
+                }
+                .product_img {@include thumbnail; margin-right: 25px;
+                    .main_img {width: 100%;}
+                }
+            }
+            .content {@include flex_col; align-items:flex-start; gap: 25px;
+                .brand {
+                    a {font-size:$font-size-xs;}
+                }
+                .product_info {@include flex_row; justify-content:space-between; width: 100%;
+                    h1 {font-size:$font-size-l;}
+                    .right_icon { @include flex_row; gap:15px;
+                        .scrap { @include flex_col; justify-content:center;
+                            .bookmark {fill:$gray-color-light-1;}
+                            &.active {
+                                .bookmark {fill:#59AFFF;}
+                            }
+                            span {color:$gray-color-light-2; font-size:$font-size-xxs;}
+                        }
+                        .share {
+                            svg {fill:$gray-color-light-1;}
+                        }
+                    }
+                }
+                .score {
+                    &:hover {
+                        .star {fill:#b6dafc}
+                        span {color:#b6dafc}
+                    }
+                    @include flex_row; justify-content: center;
+                    .star {fill:$point-color;}
+                    span {font-size:$font-size-xs; color:$point-color; font-weight: 600; margin-left:10px;}
+                }
+                .price_wrap { 
+                    .discount {position: relative; @include flex_row; gap:5px; 
+                        .sale_rate {color:$gray-color-light-2;}
+                        .price {color:$gray-color-light-1; }
+                        .info_icon {fill:$gray-color-light-1;}
+                        
+                        .info {width: 300px; position: absolute; top:150%; left: -15%; border-radius: 5px; box-shadow: 0 5px 7px rgba(0,0,0,0.15);
+                            font-size:$font-size-xs; color:$gray-color-medium; line-height: 1.2; background-color:$white-color; padding:10px;
+                            font-weight: 500; display: none;
+                        }
+                        .info.active { display: block; }
+                    }
+                    .price_deliver { margin-top:10px;  
+                        .total_price {font-size:$font-size-xl; font-weight: 700; 
+                        em {}
+                    }
+                        img {width: 60px; height: 15px;}
+                    }
+                    &.active {
+                            .info {display:block;}
+                        }
+                }
+                .benefit_ship { width: 100%; padding-bottom:20px ; border-bottom:1px solid $gray-color-light-1;
+                    dt {color:$gray-color-medium; font-size:$font-size-xs;}
+                    .benefit { @include flex_row; gap: 50px;  padding:10px 0;
+                        dd {font-size:$font-size-xs; font-weight: 600;
+                            em {}
+                        }
+                    }
+                    .ship { @include flex_row; gap: 50px; align-items:flex-start; padding:10px 0;
+                        dd {font-size:$font-size-xs;}
+                        .ship_detail {display:flex; flex-flow: column nowrap; gap:10px;
+                            dd:nth-child(2) {font-weight: 600;}
+                            dd:nth-child(3) {
+                            em {color:$point-color; font-weight: 600;}
+                        }
+                            dd:nth-child(5) {color:$gray-color-light-2;}
+                            .ship_info {background-color:$gray-color-light-0; font-size:$font-size-s;
+                            color:$gray-color-dark; padding: 15px 10px; border-radius: 7px; width: max-content;
+                            em {font-weight: 600;}
+                        }
+                        }
+                    }
+                }
+                .brand_info { @include flex_row; justify-content:space-between; width: 95%;
+                    .brand_left {display:flex; flex-flow: row nowrap; gap:10px; 
+                        svg {fill:$gray-color-light-1;}
+                        .brand_link {display:flex; flex-flow: column nowrap; justify-content: space-between; padding: 3px 0;
+                            p:nth-child(1) {font-weight: 500; position: relative;
+                                &::after {
+                                    @include after_before; content: '>'; font-size:$font-size-xs; color:$black-color; left: 70%;
+                                }
+                            }
+                            p:nth-child(2) {color:$gray-color-light-2;}
+                        }
+                    }
+                    .brand_right { 
+                        svg { fill:$gray-color-light-1}
+                    }
+                }
+                form {width: 100%;
+                    .opt {margin-bottom: 10px;}
+                    .color { position: relative;
+                        #color_select { appearance: none; width:100%; @include opt_btn; color:$gray-color-medium; padding:10px ; border-radius: 2px;
+                            option:nth-child(4) {color:$gray-color-light-1;}
+                        }
+                            svg {fill:$gray-color-light-1; position: absolute; top:38%; left:92%;}
+                    }
+                    .size { position: relative;
+                        #size_select {appearance: none;  width:100%; @include opt_btn; color:$gray-color-medium; padding:10px ; border-radius: 2px;
+                            option {}
+                        }
+                        
+                            svg {fill:$gray-color-light-1; position: absolute; top:38%; left:92%;}
+                        
+                    }
+                    .order_list {padding: 10px; @include flex_col; gap:25px; background-color:$gray-color-light-0; margin-bottom:25px;
+                        .order_info { @include flex_row; justify-content:space-between; width: 100%;
+                            p {color:$gray-color-dark; font-weight: 600; font-size:$font-size-xs;
+                                em {}
+                            }
+                            svg {fill:$gray-color-medium;}
+                        }
+                        .order_control { @include flex_row; justify-content:space-between; width: 100%; border-radius: 3px; align-items:flex-end;
+                            .control { @include flex_row; gap:5px; padding: 5px; border:1px solid $gray-color-light-1; border-radius: 2px;  background-color:$white-color;
+                                svg {fill:$gray-color-dark;}
+                                input {width: 20px; height: 20px; text-align: center;  }
+                            }
+                            .order_total_price {font-weight: 600; color:$gray-color-dark;
+                                em {}
+                            }
+                        }
+                    }
+                    .order_price {@include flex_row; justify-content:space-between; padding: 25px 0; border-top:1px solid $gray-color-light-1;
+                        h2 {font-size:$font-size-xs; font-weight: 700; color:$gray-color-dark;}
+                        p { font-size:$font-size-l; font-weight: 700; color:$gray-color-dark;
+                            em {font-weight: 700;}
+                        }
+                    }
+                    .order_btn {width: 100%; @include flex_row; justify-content:space-between; gap:10px;
+                        #cart_btn { @include cart_btn; color:$point-color; border: 1px solid $point-color;  width:100%;}
+                        #buy_btn { @include cart_btn; background-color:$point-color; color:$white-color;  width:100%;}
+                    }
+                }
+            }
+        }
+    }
+    footer {}
+}
