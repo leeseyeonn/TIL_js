@@ -58,6 +58,22 @@ controlInput.addEventListener('keyup',(e)=>{ //keyup -> 키보드를 누르고 �
     }
 })
 
+const controlInput2 = document.querySelector('#txt2')
+
+controlInput2.addEventListener('keyup',(e)=>{
+    if(e.key=='Enter'){
+        const txtResult=controlInput2.value
+        if(txtResult  == 'top' || txtResult == 'bottom'||txtResult  == 'left'||txtResult == 'right'){
+            console.log(`${txtResult}이동`)
+            controlInput2.Value=='';
+        }
+    }else{console.log('오답입니다')}
+})
+
+
+
+
+
 //학점에 따라 A~F 등급 나오는 프로그래밍
 //100~90 A
 //89~80 B
@@ -82,6 +98,20 @@ if(101>score>0){
 }else{alert('값을 다시 입력하세요')}
 
 
+const hakJeom =  90//prompt('학점을 입력하세요')
+
+if(101>hakJeom>0){
+    console.log('점수 입력완료')
+    if(hakJeom>=90){console.log('A')}
+    else if(hakJeom>=80){console.log('A')}
+    else if(hakJeom>=70){console.log('A')}
+    else if(hakJeom>=60){console.log('A')}
+    else {console.log('F')}
+}else {alert('값을 다시 입력하세요')}
+
+
+
+
 //switch ~ case
 //쇼핑몰 검색창에 사용자가 입력한 값 조건 확인
 //딸기 ->1000원
@@ -102,6 +132,21 @@ switch(fruit){
 //if (fruit==='딸기'){ console.log('1000원')}
 //else if(fruit==='사과'){ console.log('2000원')}
 
+
+const fruit2 = 90 //prompt('검색어를 입력하세요')
+
+switch(fruit2){    
+    case '딸기' : console.log('1000원'); break;
+    case '바나나': console.log('2000원'); break;
+    default : console.log('판매상품을 다시 입력해 주세요.')
+}
+    
+
+
+
+
+
+
 //전화 단축키
 const phoneNumber = 90 // prompt('단축키 입력')
 //1 누르면 엄마
@@ -114,6 +159,16 @@ switch(phoneNumber){
     case '2' : console.log('아빠'); break;
     default : console.log('해당 단축키가 없습니다')
 }
+
+
+
+const phoneNum = 90 //prompt('단축키를 입력하세요')
+switch(phoneNum){
+    case '1' : console.log('김영규'); break;
+    case '2' : console.log('문현빈'); break;
+    default : console.log('번호를 다시 입력하세요.')
+}
+
 
 //쇼핑몰 수량+가격 알고리즘
 //-버튼 클릭 시 수량, 가격 감소 (1일때 -누르면 경고)
@@ -129,11 +184,12 @@ let originalPrice = 900
 let stock = 10; //재고
 
 numberInput.value = numVal; //초기값 대입
+
+console.log(numberInput.value)
+
 priceP.textContent = `${numVal*originalPrice}원`
 
 console.log(priceP.textContent)
-
-
 //numVal 값이 1과 같으면 오류출력, 1이 아니면 감소
 
 numFunc()
