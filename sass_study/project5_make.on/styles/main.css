@@ -7,7 +7,7 @@ svg {
   max-width: 1400px;
   min-width: 320px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding: 50px 20px 0 20px;
 }
 #wrap #path {
   display: flex;
@@ -21,6 +21,9 @@ svg {
 }
 #wrap #path a:nth-child(2) {
   font-size: 0.75rem;
+  color: #767676;
+}
+#wrap #path a:nth-child(2):hover {
   color: #999;
 }
 #wrap #path svg:nth-child(3) {
@@ -29,6 +32,9 @@ svg {
 }
 #wrap #path a:nth-child(4) {
   font-size: 0.75rem;
+}
+#wrap #path a:nth-child(4):hover {
+  color: #767676;
 }
 #wrap #product_wrap {
   display: grid;
@@ -41,6 +47,7 @@ svg {
   align-items: center;
   gap: 20px; /* align-items: flex-start; */
   align-items: stretch;
+  margin-right: 20px;
 }
 #wrap #product_wrap #product_image .thumbnail {
   display: flex;
@@ -55,10 +62,6 @@ svg {
   margin-bottom: 12px;
 }
 #wrap #product_wrap #product_image .thumbnail .thumbnail_images {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  gap: 5px;
   height: 604px;
   overflow: hidden;
   position: relative;
@@ -69,29 +72,82 @@ svg {
   position: absolute;
   width: 100%;
   height: 10%;
-  /* background: linear-gradient(transparent,white); */
   background: linear-gradient(to top, white 40%, transparent 100%);
   left: 0;
   bottom: 0;
 }
-#wrap #product_wrap #product_image .thumbnail .thumbnail_images a {
+#wrap #product_wrap #product_image .thumbnail .thumbnail_images .thumbnail_wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 5px;
+  height: max-content;
+}
+#wrap #product_wrap #product_image .thumbnail .thumbnail_images .thumbnail_wrap a {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   width: 84px;
   height: 84px;
+  position: relative;
+  border-radius: 5px;
 }
-#wrap #product_wrap #product_image .thumbnail .thumbnail_images a img {
+#wrap #product_wrap #product_image .thumbnail .thumbnail_images .thumbnail_wrap a:hover::after {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.5);
+  content: "";
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+#wrap #product_wrap #product_image .thumbnail .thumbnail_images .thumbnail_wrap a.active {
+  border: 1px solid #111;
+}
+#wrap #product_wrap #product_image .thumbnail .thumbnail_images .thumbnail_wrap a img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
 #wrap #product_wrap #product_image .main_image {
+  border-radius: 30px;
+  position: relative;
   width: 508px;
   height: 671px;
-  border-radius: 30px;
   overflow: hidden;
 }
-#wrap #product_wrap #product_image .main_image img {
+#wrap #product_wrap #product_image .main_image .main-image_wrap a {
+  width: 508px;
+  height: 671px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+#wrap #product_wrap #product_image .main_image .main-image_wrap a img {
   width: 100%;
+  height: 100%;
+}
+#wrap #product_wrap #product_image .main_image .mobile_control {
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10px;
+}
+#wrap #product_wrap #product_image .main_image .mobile_control svg {
+  fill: #999;
+}
+#wrap #product_wrap #product_image .main_image .mobile_control svg.active {
+  fill: #333;
+  width: 10px;
+  height: 10px;
 }
 #wrap #product_wrap #content {
   display: flex;
@@ -105,7 +161,7 @@ svg {
   flex-flow: row nowrap;
   align-items: center;
   align-items: flex-start;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 #wrap #product_wrap #content .title_price .title .product_info .product_title {
   font-size: 1.875rem;
@@ -129,7 +185,7 @@ svg {
 }
 #wrap #product_wrap #content .title_price .price .prime_cost span:nth-child(1) {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #999;
 }
 #wrap #product_wrap #content .title_price .price .prime_cost span:nth-child(1) del {
@@ -145,6 +201,7 @@ svg {
   flex-flow: row nowrap;
   align-items: center;
   gap: 6px;
+  position: relative;
 }
 #wrap #product_wrap #content .title_price .price .discount_cost .discount_rate {
   color: #FF4519;
@@ -171,12 +228,46 @@ svg {
 #wrap #product_wrap #content .title_price .price .discount_cost .benefit_info svg {
   fill: #999;
 }
+#wrap #product_wrap #content .title_price .price .discount_cost .info_text {
+  transform: translate(-50%, -50%);
+  bottom: -220%;
+  left: 42.8%;
+  position: absolute;
+}
+#wrap #product_wrap #content .title_price .price .discount_cost .info_text > p {
+  color: #333;
+  font-size: 0.875rem;
+  padding: 9px 14px;
+  display: none;
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #111;
+}
+#wrap #product_wrap #content .title_price .price .discount_cost .info_text > p::after {
+  display: block;
+  content: "";
+  top: 27%;
+  left: 95%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  /* width: 0px;
+  height: 0px; z-index: 1;
+  border-top: 10px solid none;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f1f1f1;  */
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: url(https://www.make-on.com/wvl/img/ico-bubble-toptip.svg);
+}
 #wrap #product_wrap #content .title_price .price .information_card {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   gap: 14px;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 #wrap #product_wrap #content .title_price .price .information_card .card {
   border-radius: 5px;
@@ -377,6 +468,9 @@ svg {
     gap: 40px;
     padding-top: 40px;
   }
+  #wrap #product_wrap #product_image {
+    margin-right: 0;
+  }
   #wrap #product_wrap #product_image .thumbnail {
     display: none;
   }
@@ -384,6 +478,12 @@ svg {
     width: 100%;
     height: 100%;
     position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+  #wrap #product_wrap #product_image .main_image a:nth-child(n+2):nth-child(-n+10) {
+    display: none;
   }
   #wrap #product_wrap #product_image .main_image .mobile_control {
     position: absolute;
@@ -397,6 +497,16 @@ svg {
   }
   #wrap #product_wrap #product_image .main_image .mobile_control svg {
     fill: #999;
+  }
+  #wrap #product_wrap .discount_cost {
+    position: relative;
+  }
+  #wrap #product_wrap .discount_cost .info_text {
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  #wrap #product_wrap .discount_cost .info_text > p {
+    position: relative;
   }
   #wrap #product_wrap #content .favorite svg {
     height: 57px;
