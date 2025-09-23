@@ -1,0 +1,66 @@
+body {
+  padding-top: 50px;
+}
+
+main {
+  width: 1000px;
+  height: 600px;
+  padding: 164px 115px;
+  border: 2px solid black;
+  margin: 0 auto;
+}
+main h1:nth-child(1) {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+main h1:nth-child(2) {
+  font-size: 4rem;
+  font-weight: 700;
+}
+main .birthday {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 15px;
+  margin-top: 40px;
+}
+main .birthday .birth {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  gap: 2px;
+}
+main .birthday .birth dt {
+  /*  &::after {display: block; content: ''; width: 2px; height: 40px;} */
+}
+main .birthday .birth dt input {
+  font-size: 1.5rem;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid black;
+  color: brown;
+  font-weight: 500;
+}
+main .birthday .birth dd {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+main .birthday .Y #YY {
+  width: 94px;
+  height: 44px;
+}
+main .birthday .M #MM {
+  width: 67px;
+  height: 44px;
+}
+main .birthday .D #DD {
+  width: 67px;
+  height: 44px;
+}
+main p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+/*# sourceMappingURL=birthday.css.map */
