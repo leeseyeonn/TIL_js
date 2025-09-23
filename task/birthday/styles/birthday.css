@@ -30,9 +30,8 @@ main .birthday .birth {
   align-items: flex-end;
   gap: 2px;
 }
-main .birthday .birth dt {
-  /*  &::after {display: block; content: ''; width: 2px; height: 40px;} */
-}
+main .birthday .birth dt { /* &::after {display: block; content: ''; width: 2px; height: 40px; position: absolute; top: 0; left: 50%; background: black; z-index: 1;}
+position: relative; */ }
 main .birthday .birth dt input {
   font-size: 1.5rem;
   padding: 10px;
@@ -48,6 +47,7 @@ main .birthday .birth dd {
 main .birthday .Y #YY {
   width: 94px;
   height: 44px;
+  z-index: -1;
 }
 main .birthday .M #MM {
   width: 67px;
@@ -57,10 +57,32 @@ main .birthday .D #DD {
   width: 67px;
   height: 44px;
 }
+main .birthday .btn:hover {
+  border: 2px solid black;
+  background: white;
+  color: black;
+  font-weight: 500;
+}
+main .birthday .btn {
+  font-weight: 500;
+  font-size: 1.5rem;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid black;
+}
 main p {
   font-size: 1.5rem;
   font-weight: 500;
   margin-top: 40px;
+}
+main .reset {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: brown;
+  text-decoration-line: underline;
+  margin-top: 40px;
+  margin-left: 85%;
 }
 
 /*# sourceMappingURL=birthday.css.map */
