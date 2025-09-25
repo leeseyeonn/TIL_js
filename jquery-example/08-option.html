@@ -28,7 +28,36 @@
         <p class="select">선택옵션 : <span></span><button type="button" class="close">x</button></p>
     </div>
     <script>
-        
+        //1. 선택 옵션 초기 숨기기
+        //2. select 옵션 선택 시
+        //3. 선택 옵션 목록 출력하기
+        //4. 선택 옵션 오른쪽 X 클릭 시 선택 옵션 제거 
+
+        const $color = $('#color')
+        const $select=$('.select')
+        const $btn =$('.close')
+        console.log($color,$select,$btn)
+
+        // js ver
+        /* select.addEventListener('change',()=>{a()})
+        function a(){select.option[selectedIndex]} */
+
+        $select.hide();
+        $color.change(function(){
+            console.log($(this).find('option:checked').val())
+            $select.show().text(); //선택옵션 보이기
+            //선택 옵션에 내가 선택한 옵션 값 출력하기
+            let thisVal = $(this).find('option:checked').val() //값이 기니까 변수로 만들어주기
+            $select.find('span').text(thisVal);
+            //js ver
+            //select.children[0].textContent = thisVal;
+        })
+        //4. 선택 옵션 오른쪽 X 클릭 시 선택 옵션 제거 
+        $btn.click(function(){
+            /* $btn.parent().hide(); */
+            $(this).parent().hide();
+        })
+
     </script>
 </body>
 </html>

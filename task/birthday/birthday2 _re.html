@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>** 탄생화 알아보기 | 과제</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/birthday.css">
+    <!-- 제이쿼리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="./scripts/birthday_re.js" defer></script> --> <!-- 제이쿼리 -->
+    <script src="./scripts/birthday_re2.js"defer></script>
+    <script src="./scripts/db.js"></script>
+    <style>
+        img {width: 200px; height: 200px; border: 1px solid black;}
+        input {border: 1px solid black; width: 100px; margin-top: 20px;}
+        h2 {margin-top: 20px;}
+        main {width: 600px; height: 800px;
+        background:url(https://i.pinimg.com/736x/11/ed/29/11ed290676e7bf3d51b92cb9db6175c4.jpg);}
+        button {background-color: green; color: white; margin-top: 20px; padding: 10px;}
+        h2 {font-size: 1.5rem; font-weight: 500; margin-top: 20px;}
+    </style>
+</head>
+<body>
+    <main>
+        <h1>나의 탄생화</h1>
+        <h1>알아보기</h1>
+        <div class="result_flower">
+            <h2>당신의 탄생화는 <em></em>입니다</h2>
+            <p>꽃말 : <span></span></p>
+            <p><img src="https://i.pinimg.com/736x/b5/3c/1c/b53c1c0b0b4dfdd657c6357b2cf1b1c1.jpg" alt=""></p>
+        </div>
+        <form action="#" method="get" id="birthFrm">
+            <div class="birthInput">
+                <input type="text" id="yy">
+                <input type="text" id="mm">
+                <input type="text" id="dd">
+            </div>
+            <button type="button" class="btn">나의 탄생화 찾기</button>
+            <button type="button" class="share">공유하기</button>
+        </form>
+    </main>
+</body>
+</html>
