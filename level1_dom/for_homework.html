@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 | JS</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="./scripts/for_homework.js" defer></script>
+    <style>
+        .box {display: flex; flex-flow: row nowrap; gap:5px;}
+        .mini {width: 100px; height: 100px; border: 2px solid lightgray; color:lightgray ;}
+        .mini.active {width: 100px; height: 100px; border: 2px solid red; color:red;}
+        .board {display: block; width: 200px; height: 50px; border: 2px solid black;}
+        .contents {display: block; width: 200px; height: 50px; border: 2px solid black;}
+        .btnz{width: 100px; height: 50px; border: 2px solid black;}
+        .menu * {display: block; width: 100px; height: 50px; border: 2px solid black; margin: 5px;}
+        .dan99 {display: flex; flex-flow: column wrap; height: 300px;}
+        .seat {width: 500px; height: 50px; border: 2px solid black;}
+        .notice {width: 500px; height: 50px; border: 2px solid black;}
+    </style>
+</head>
+<body>
+    <section class="box">
+        <button type="button" class="mini">1</button>
+        <button type="button" class="mini">2</button>
+        <button type="button" class="mini">3</button>
+        <button type="button" class="mini">4</button>
+    </section>
+    <div class="menu">
+        <a href="#">menu1</a>
+        <a href="#">menu2</a>
+        <a href="#">menu3</a>
+        <a href="#">menu4</a>
+    </div>
+    <section class="board">
+        <div class="title">
+            <a href="#">고객리뷰</a>
+            <a href="#">상품문의</a>
+        </div>
+    </section>
+    <section class="contents">
+        <div class="con review">상품 리뷰</div>
+        <div class="con qa">상품 질문</div>
+    </section>
+    <ul class="dan2"></ul>
+    <ul class="dan99"></ul>
+    <div class="btn">
+        <button type="button" class="btnz btn1">버튼1</button>
+        <button type="button" class="btnz btn2">버튼2</button>
+        <button type="button" class="btnz btn3">버튼3</button>
+        <button type="button" class="btnz btn4">버튼4</button>
+    </div>
+    <div class="seat">
+        <button type="button">좌석 이용 안내</button>
+        <p>1인 1좌석</p>
+        <p>지정좌석제</p>
+    </div>
+    <div class="notice">
+        <button type="button">열람실 에티켓</button>
+        <p>소리나는 행동 조심</p>
+        <p>음식 섭취 금지</p>
+    </div>
+    <p class="ul_test"></p>
+</body>
+</html>

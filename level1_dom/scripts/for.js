@@ -154,7 +154,7 @@ while (cssQ != 'fieldset'){
     cssQ = prompt('묶어야 할 form이 두 개 이상일 때 쓰는 요소는?')
 }alert('정답입니다.') */
 console.log('----------------------')
-/* while(true){
+while(true){
     const qa = prompt('자바스크립트는 동적 언어이다 (O/X)')
     if(qa !== 'O' && qa !== 'X'){ //잘못된 답안 조건문
         alert('잘못된 입력입니다. O X 만 입력해주세요.')
@@ -168,7 +168,7 @@ console.log('----------------------')
     }else{alert('오답입니다'); break;
     }
 }//while문 종료 위치 (break 만날 시 나오는 위치)
-alert('퀴즈 종료') */
+alert('퀴즈 종료')
 console.log('----------------------')
 for(let i=1; i<=10; i++){
     console.log(i)
