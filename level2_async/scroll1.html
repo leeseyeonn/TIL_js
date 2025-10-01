@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 | JS</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        body, html {height: 300vh;
+        background:linear-gradient(salmon, orange)}
+        .bnr {background-color: hotpink; height: 50px;}
+        #top { color: salmon;
+            position: fixed; font-size: 1.5rem; right:20px; bottom: 20px; background-color: #fff; padding: 10px; border-radius: 50%;}
+        header {background: #fff; height: 100px; position: relative; z-index: 999;  }
+        .header_fixed {position: relative ;top:0; width: 100%;}
+        /* sticky 실행 조건 : sticky적용 대상의 부모가 뷰포트보다 커야함 */
+        main .title {background: skyblue; height: 50px; position: sticky; top:0; }
+        .title a {background-color: #fff; border: 2px solid black;}
+    </style>
+</head>
+<body>
+    <button type="button" id="top">⬆</button>
+    <div class="bnr">광고</div>
+    <header>header</header>
+    <main>
+        <div class="title">
+            <a href="#">책 소개</a>
+            <a href="#">리뷰</a>
+            <a href="#">배송정보</a>
+        </div>
+        <div class="contents" style="height:80vh">책 소개 내용</div>
+        <div class="contents" style="height:80vh">리뷰 내용</div>
+        <div class="contents" style="height:80vh">배송 정보 내용</div>
+    </main>
+    <script>
+        const topBtn = document.querySelector('#top')
+        const titleA = document.querySelectorAll('.title a')
+        const contents = document.querySelectorAll('.contents')
+        const header = document.querySelector('header')
+
+        //객체.forEach(function(obj,ind,arr){반복실행})
+        //객체[index] //개별방법
+        //스크롤 이벤트
+        //window.addEventListener('scroll',()=>{console.log('.')})
+        /***************************/
+        /* window.addEventListener('scroll',()=>{
+            console.log(window.pageYOffset) //내가 스크롤을 얼만큼 했는지 확인 가능
+            if(window.pageYOffset>300) console.log('현재위치는 300보다 크다')
+        }) */
+        /***************************/
+        window.addEventListener('scroll',()=>{
+            window.window.pageYOffset > 50 ? 
+            (header.classList.add('header_fixed'),
+            topBtn.style.display='block') : (header.classList.remove('header_fixed'),topBtn.style.display='none');
+            //* if(window.pageYOffset > 50 /* 50은 헤더사이즈 */){
+                /* header.style.position = 'fixed' 이렇게 해도 되고
+                header.style.width = '100%'
+                header.style.top = '0' */
+                //* header.classList.add('header_fixed')
+            //* }else{/* 
+                //header.style.position ='relative'  이렇게 해도 되고 */
+                //header.classList.remove('header_fixed')
+            //* }
+        })
+
+        
+        
+
+        console.log(contents[0])
+
+        titleA.forEach((obj,ind,arr)=>{
+            console.log(titleA)
+            obj.addEventListener('click',(e)=>{
+                e.preventDefault(); //href 막기
+                window.scrollTo(0,contents[ind].offsetTop-80)
+            })
+        })
+
+        /*function scrollFunc(){
+            for(let i of contents)
+            } */
+
+        
+
+
+        topBtn.addEventListener('click',()=>{
+            //window.scrollTo(x,y(,option))
+            //window.scrollTo(100,200)
+            //window.scrollTo({left:0, top:100})
+            window.scrollTo({left:0, top:100, behavior:'smooth'}) //behavior 쓸거면 중괄호로 묶자
+        })
+    </script>
+</body>
+</html>
