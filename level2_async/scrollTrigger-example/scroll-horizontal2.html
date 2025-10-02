@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가로스크롤 트리거 활용</title>
+    <link rel="stylesheet" href="./reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <style>
+        body { height: 300vh; overflow-x: hidden; }
+        header {background-color: burlywood; width: 100%; display: flex; justify-content: center; align-items: center; position: fixed; z-index: 100; top:0; left: 0;}
+        header img {}
+        .title {color:#fff; font-size: 1.5rem; font-weight: 600; position: fixed; top:10%; left: 50%; transform: translateX(-50%); z-index: 90;}
+        main {position: relative;height: 100vh; }
+        main section { display: flex;   width: 200vw; }
+        main section .wrap {width: 100%;}
+        main section .wrap .mission * {color:#fff;}
+        main section .wrap .mission { height: 100vh; overflow: hidden; }
+        main section .wrap .card1 {
+            background-image: url(./images/donggubat_02.jpg);  background-repeat: no-repeat; 
+            background-size: cover;
+        }
+        main section .wrap .card1 img {width: 65%; display: block; margin: 8% auto;}
+        main section .wrap .card1 .card_title { position: relative; top: 15%;
+
+        }
+        main section .wrap .card2 { display: flex; flex-flow: column nowrap; align-items: center; justify-content: center; gap:100px;
+            background-image: url(./images/donggubat_03.jpg); 
+            width: 100%; background-repeat: no-repeat; background-size: cover;}
+        main section .wrap .card2 .content {display: flex; flex-flow: row nowrap; align-items: flex-start; gap:50px;}
+        main section .wrap .mission h1 {
+            color:#fff; font-weight: 500; font-size: 1.8rem; line-height: 150%; /* position: relative; top: 6%; */
+            display: flex; flex-flow: column nowrap; align-items: center; 
+        }
+        main section .wrap .mission h1 img {}
+        main section .wrap .mission dl {display: flex; flex-flow: column nowrap; align-items: center; }
+        main section .wrap .mission dl dt {font-weight: 600; font-size: 1.6rem; margin-bottom: 10px;}
+        main section .wrap .mission dl dd {text-align: center; line-height: 150%; font-size: 1.2rem;}
+    </style>
+</head>
+<body>
+    <header><img src="./images/donggubat_logo.png" alt=""></header>
+    <p class="title">Our Mission</p>
+    <main>
+        <section>
+            <div class="wrap">
+                <div class="mission card1">
+                    <div class="card_title">
+                        <h1>비장애인과 장애인이</h1>
+                        <h1>함께 만드는 지속 가능한 일상</h1>
+                    </div>
+                    <img src="./images/donggubat_01.jpg" alt="">
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="mission card2">
+                    <h1>동구밭은 만듭니다.</h1>
+                    <div class="content">
+                        <dl>
+                            <dt>올바름을</dt>
+                            <dd>우리 몸과 환경에 유해한 성분을 배제하고<br>
+                                안전하고 윤리적이며 효과적인<br>
+                                원료를 사용합니다.</dd>
+                        </dl>
+                        <dl>
+                            <dt>가능성을</dt>
+                            <dd>나이, 성별, 장애 여부와 상관 없이 우리 모두가<br>
+                                100%의 존재임을 믿습니다.<br>
+                                도시, 시골, 한옥, 당신이 어느 곳에 있든 응원합니다.</dd>
+                        </dl>
+                        <dl>
+                            <dt>더 나은 내일과</dt>
+                            <dd>나상자 하나, 완충재 하나까지도 더 나은 대안을<br>
+                                끊임없이 고민합니다. 익숙하게 버려지는 것들에<br>
+                                새로운 가치를 찾습니다.</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>    
+        </section>
+    </main>
+    <script>
+        gsap.registerPlugin(ScrollTrigger)
+        const mission=document.querySelector('section')
+        const scrollW = mission.offsetWidth - window.innerWidth;
+        console.log(mission,scrollW)
+        gsap.utils.toArray('main').forEach((obj)=>{
+            console.log(obj)
+            const dgb = gsap.timeline({
+                scrollTrigger : {
+                    trigger:obj,
+                    start:'center center',
+                    end:()=>"+=" + scrollW,
+                    scrub:true,
+                    pin:true,
+                    anticipatePin:1,
+                },default:{ease:'ease'},
+            })
+            dgb.fromTo(obj.querySelector('section'),{
+                x:0,
+            },{
+                x:-scrollW
+            })
+        })
+    </script>
+</body>
+</html>

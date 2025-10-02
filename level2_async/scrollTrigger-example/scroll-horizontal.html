@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <style>
+        body {overflow-x: hidden; /* 가로축만 */}
+        .box {height: 100vh; background: #eee;}
+        main .wrap .contanier {display: flex; width: 400vw;}
+        main .wrap .contanier img {display: flex; width: 100vw;}
+    </style>
+</head>
+<body>
+    <main>
+        <section class="box">1</section>
+        <section class="wrap">
+            <div class="contanier">
+                <img src="./images/bg1.jpg" alt="">
+                <img src="./images/bg2.jpg" alt="">
+                <img src="./images/bg3.jpg" alt="">
+                <img src="./images/bg4.jpg" alt="">
+            </div>
+        </section>
+        <section class="box">3</section>
+        <section class="wrap">
+            <div class="contanier">
+                <img src="./images/bg1.jpg" alt="">
+                <img src="./images/bg2.jpg" alt="">
+                <img src="./images/bg3.jpg" alt="">
+                <img src="./images/bg4.jpg" alt="">
+            </div>
+        </section>
+    </main>
+    <script>
+        gsap.registerPlugin(ScrollTrigger)
+        const contanier = document.querySelector('.contanier')
+        const scrollW = contanier.offsetWidth - window.innerWidth;
+
+        console.log(contanier.offsetWidth,scrollW)
+        //scrollTrigger
+        gsap.utils.toArray('.wrap').forEach((obj)=>{ /* 배열로 접근하겠다는 의미 */
+            console.log(obj)
+            //timeline 애니메이션 관리 + fromTo 연결 동작
+            const banyan = gsap.timeline({
+                scrollTrigger:{
+                    trigger:obj, //'.wrap'
+                    start:'center center',
+                    end:()=>"+=" + scrollW,
+                    scrub:true, //마우스휠 동작에 맞추기
+                    pin:true, // 고정
+                    anticipatePin:1, //(화면 튀는 현상 막기)
+                },default:{ease:'none'}, //속도 균일
+            })
+            banyan.fromTo(obj.querySelector('.contanier'),{
+                x:0,
+            },{
+                x:-scrollW
+            })
+        }) 
+        //const timer = setInterval(()=>{})
+        //timer.속성.함수
+    </script>
+</body>
+</html>
