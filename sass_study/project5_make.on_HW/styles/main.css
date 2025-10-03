@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/*----------------------------배너*/
+/*----------------------------헤더*/
+/* 로고 */
+header {
+  border: 2px solid red;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+header .logo {
+  width: 157px;
+  height: 30px;
+}
+
+header .logo a img {
+  width: 100%;
+}
+
+/* 카테고리 */
+header .categorie {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 50px;
+}
+
+header .categorie a {
+  font-weight: 600;
+  padding: 20px 0;
+  display: inline-block;
+}
+
+/* 계정 */
+header .account {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 20px;
+}
+
+header .account a {
+  padding: 20px 0;
+  display: inline-block;
+}
+
+/*--------------------------------------------- 메인 */
+/*--------------------------경로*/
+main #MO_path #path {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+main #MO_path #path img {
+  width: 15px;
+  height: 15px;
+  fill: #999;
+}
+
+main #MO_path #path a {
+  font-size: 0.75rem;
+}
+
+main #MO_path #path a:nth-child(2) {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+main #MO_path #path span {
+  font-size: 0.75rem;
+  margin: 0 10px;
+  color: #999;
+}
+
+/*--------------------------썸네일*/
+/* -----사이드 */
+main #MO_thumbnail #side {
+  border: 2px solid red;
+  line-height: 1;
+}
+
+main #MO_thumbnail #side #side_img {
+  width: 84px;
+  height: 650px;
+  border: 2px solid green;
+}
+
+main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide {
+  overflow: hidden;
+}
+
+main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+main #MO_thumbnail .swiper-button-prev {
+  border: 1px solid #999;
+  position: relative;
+  left: 50%;
+  transform: translateX(40%);
+  width: 24px;
+  height: 24px;
+  background-color: #FFF;
+  border-radius: 50%;
+}
+
+main #MO_thumbnail #side .swiper-button-next {
+  border: 1px solid #999;
+  position: relative;
+  left: 50%;
+  transform: translateX(40%);
+  width: 24px;
+  height: 24px;
+  background-color: #FFF;
+  border-radius: 50%;
+}
+
+main #MO_thumbnail #side .slidebtn svg {
+  width: 8px;
+}
+
+main #MO_thumbnail #side .slidebtn path {
+  color: #666;
+}
+
+/* -----메인 */
+/*--------------------------콘텐츠*/
+/* ----------1행 타이틀 */
+/* ----------2행 상품가 */
+/* ----------3행 정보 카드 */
+/* ----------4행 리뷰 */
+/* ----------5행 배송비 */
+/* ----------6행 상품 수량관리 */
+/* ----------7행 합계 */
+/* ----------8행 최종 구매 버튼 */
+/* ----------9행 세부사항 안내 */
+/* --------------팝업 */
+
+/*# sourceMappingURL=main.css.map */

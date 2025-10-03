@@ -1,0 +1,38 @@
+// common.scss
+
+$font-size-12:0.75rem;
+$font-size-14:0.875rem;
+$font-size-16:1rem;
+$font-size-18:1.125rem;
+$font-size-20:1.25rem;
+$font-size-24:1.5rem;
+$font-size-30:1.875rem;
+
+$font-weight-m:500;
+$font-weight-sb:600;
+$font-weight-b:700;
+
+$line-height-120:120%;
+$line-height-150:150%;
+
+$color-point:#FF4519;
+$color-gray-0:#e5e5e5;
+$color-gray-1:#F6F6F6;
+$color-gray-2:#999;
+$color-gray-3:#767676;
+$color-gray-4:#666;
+$color-gray-5:#333;
+$color-gray-6:#111;
+$color-white:#fff;
+
+@mixin check1 {border: 2px solid red;}
+@mixin check2 {border: 2px solid green;}
+@mixin check3 {border: 2px solid blue;}
+@mixin grid {display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+@mixin row {display: flex; flex-flow: row nowrap; align-items: center;}
+
+@mixin slideBtn { border:1px solid $color-gray-2 ; position: relative; left: 50%; transform: translateX(40%);
+    width: 24px; height: 24px; background-color: #FFF; border-radius: 50%;}

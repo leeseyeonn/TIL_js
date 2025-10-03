@@ -1,0 +1,142 @@
+@use './common.scss' as *;
+
+/*----------------------------배너*/
+#banner {}
+#banner > span {}
+
+/*----------------------------헤더*/
+/* 로고 */
+header {@include check1; @include row; justify-content: space-between; padding: 0 50px;}
+header .logo {width: 157px; height: 30px;}
+header .logo a {}
+header .logo a img {width: 100%;}
+/* 카테고리 */
+header .categorie {@include row; gap: 50px;}
+header .categorie a {font-weight:$font-weight-sb; padding: 20px 0; display: inline-block;}
+/* 계정 */
+header .account {@include row; gap:20px;}
+header .account a {padding: 20px 0; display: inline-block;}
+header .account a img {}
+
+/*--------------------------------------------- 메인 */
+main {}
+main section {}
+/*--------------------------경로*/
+main #MO_path {}
+main #MO_path #path {@include row;}
+main #MO_path #path img {width: 15px; height: 15px; fill:$color-gray-2;}
+main #MO_path #path a {font-size:$font-size-12;}
+main #MO_path #path a:nth-child(2) {font-size:$font-size-12; color:$color-gray-2;}
+main #MO_path #path span {font-size:$font-size-12; margin: 0 10px; color:$color-gray-2;}
+
+/*--------------------------썸네일*/
+main #MO_thumbnail {}
+/* -----사이드 */
+main #MO_thumbnail #side {@include check1; line-height: 1; }
+main #MO_thumbnail #side #side_img {width:84px; height: 650px; @include check2;}
+main #MO_thumbnail #side #side_img .swiper-wrapper {}
+main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide {overflow: hidden;}
+main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide a {}
+main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide a img {width: 100%; height: 100%; object-fit: cover;border-radius: 10px;}
+main #MO_thumbnail .swiper-button-prev {@include slideBtn;}
+main #MO_thumbnail #side .swiper-button-next  {@include slideBtn;}
+main #MO_thumbnail #side .slidebtn {}
+main #MO_thumbnail #side .slidebtn svg {width: 8px;}
+main #MO_thumbnail #side .slidebtn path {color:$color-gray-4;}
+
+/* -----메인 */
+main #MO_thumbnail #main {}
+main #MO_thumbnail #main {}
+main #MO_thumbnail #main #main_img {}
+main #MO_thumbnail #main #main_img .swiper-wrapper {}
+main #MO_thumbnail #main #main_img .swiper-wrapper .swiper-slide {}
+main #MO_thumbnail #main #main_img .swiper-wrapper .swiper-slide a {}
+main #MO_thumbnail #main #main_img .swiper-wrapper .swiper-slide a img {}
+main #MO_thumbnail #main #main_img .swiper-wrapper .swiper-pagination {}
+
+/*--------------------------콘텐츠*/
+main #MO_contents {}
+main #MO_contents .row {}
+
+/* ----------1행 타이틀 */
+main #MO_contents .row1 {}
+main #MO_contents .row1 #title {}
+main #MO_contents .row1 #title h1 {}
+main #MO_contents .row1 #title a {}
+main #MO_contents .row1 #title a img {}
+main #MO_contents .row1 #title p {}
+
+/* ----------2행 상품가 */
+main #MO_contents .row2 {}
+main #MO_contents .row2 {}
+
+main #MO_contents .row2 {}
+main #MO_contents .row2 #orignal_pirce {}
+main #MO_contents .row2 #orignal_pirce span {}
+main #MO_contents .row2 #discount {}
+main #MO_contents .row2 #discount .discount_rate {}
+main #MO_contents .row2 #discount .discount_rate em {}
+main #MO_contents .row2 #discount .discount_cost {}
+main #MO_contents .row2 #discount .discount_cost em {}
+main #MO_contents .row2 #discount .discount_target {}
+main #MO_contents .row2 #discount #discount_info {}
+main #MO_contents .row2 #discount #discount_info img {}
+main #MO_contents .row2 #discount p {}
+/* ----------3행 정보 카드 */
+main #MO_contents .row3 {}
+main #MO_contents .row3 .swiper {}
+main #MO_contents .row3 .swiper .swiper-wrapper {}
+main #MO_contents .row3 .swiper .swiper-slide {}
+main #MO_contents .row3 .swiper .swiper-slide dl {}
+main #MO_contents .row3 .swiper .swiper-slide dl dt {}
+main #MO_contents .row3 .swiper .swiper-slide dl dd {}
+main #MO_contents .row3 .swiper .swiper-slide .card1 {}
+main #MO_contents .row3 .swiper .swiper-slide .card1 img {}
+main #MO_contents .row3 .swiper .swiper-slide .card2 {}
+main #MO_contents .row3 .swiper .swiper-slide .card3 {}
+main #MO_contents .row3 .swiper .swiper-slide .card4 {}
+/* ----------4행 리뷰 */
+main #MO_contents .row4 {}
+main #MO_contents .row4 span {}
+main #MO_contents .row4 span img {}
+/* ----------5행 배송비 */
+main #MO_contents .row5 {}
+main #MO_contents .row5 dl {}
+main #MO_contents .row5 dl dt {}
+main #MO_contents .row5 dl dd {}
+/* ----------6행 상품 수량관리 */
+main #MO_contents .row6 {}
+main #MO_contents .row6 .product_title {}
+main #MO_contents .row6 .control {}
+main #MO_contents .row6 .control .control_btn {}
+main #MO_contents .row6 .control .control_btn span {}
+main #MO_contents .row6 .control .control_btn span em {}
+main #MO_contents .row6 .control #price {}
+main #MO_contents .row6 .control #price em {}
+/* ----------7행 합계 */
+main #MO_contents .row7 {}
+main #MO_contents .row7 span {}
+main #MO_contents .row7 span em {}
+main #MO_contents .row7 #total {}
+main #MO_contents .row7 #total .total_price {}
+main #MO_contents .row7 #total .total_price em {}
+main #MO_contents .row7 #total .count {}
+/* ----------8행 최종 구매 버튼 */
+main #MO_contents .row8 {}
+main #MO_contents .row8 #favorite {}
+main #MO_contents .row8 #favorite img {}
+main #MO_contents .row8 .buy_btn {}
+main #MO_contents .row8 .buy_btn a {}
+main #MO_contents .row8 .buy_btn #cart {}
+main #MO_contents .row8 .buy_btn #buy_now {}
+/* ----------9행 세부사항 안내 */
+main #MO_contents .row9 {}
+main #MO_contents .row9 ul {}
+main #MO_contents .row9 ul li {}
+/* --------------팝업 */
+main #MO_contents #pop_up {}
+main #MO_contents #pop_up #cancel {}
+main #MO_contents #pop_up #cancel img {}
+main #MO_contents #pop_up #share_icon {}
+main #MO_contents #pop_up #share_icon a {}
+main #MO_contents #pop_up #share_icon a img {}

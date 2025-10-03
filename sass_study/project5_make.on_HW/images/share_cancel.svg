@@ -1,0 +1,18 @@
+<svg id="btn-X" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #111;
+      }
+    </style>
+  </defs>
+  <rect id="사각형_407" data-name="사각형 407" class="cls-1" width="24" height="24"/>
+  <g id="그룹_1316" data-name="그룹 1316" transform="translate(-1375.791 -352)">
+    <path id="패스_219" data-name="패스 219" class="cls-2" d="M-18300.209,8448l16,16" transform="translate(19680 -8092)"/>
+    <path id="패스_220" data-name="패스 220" class="cls-2" d="M-18284.209,8448l-16,16" transform="translate(19680 -8092)"/>
+  </g>
+</svg>
