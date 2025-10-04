@@ -28,11 +28,32 @@ $color-white:#fff;
 @mixin check1 {border: 2px solid red;}
 @mixin check2 {border: 2px solid green;}
 @mixin check3 {border: 2px solid blue;}
-@mixin grid {display:grid;
+@mixin grid {display:grid; align-items: start;
     grid-template-columns:repeat(2, 1fr);
     grid-template-rows: repeat(2,1fr);
 }
+
+@mixin flex-main {display: flex; flex-flow: column nowrap; gap:30px; align-items: flex-start;}
+@mixin col {display:flex; flex-flow: column nowrap; align-items:center;}
 @mixin row {display: flex; flex-flow: row nowrap; align-items: center;}
 
-@mixin slideBtn { border:1px solid $color-gray-2 ; position: relative; left: 50%; transform: translateX(40%);
-    width: 24px; height: 24px; background-color: #FFF; border-radius: 50%;}
+@mixin slideBtn { border:1px solid $color-gray-2; position: relative;
+    width: 24px; height: 24px; background-color: #fff; border-radius: 50%;}
+@mixin mainimg {width: 508px; height: 696px;}
+@mixin content_w {max-width: 1400px; min-width: 320px; margin: 0 auto;}
+@mixin icon18 {width: 18px; height: 18px}
+@mixin icon24 {width: 24px; height: 24px}
+@mixin icon2724 {width: 27px; height: 24px}
+@mixin icon30 {width: 30px; height: 30px}
+@mixin icon40 {width: 40px; height: 40px}
+@mixin borderR {border-radius:5px;}
+@mixin border-line {border: 1px solid $color-gray-3; border-radius:5px; }
+@mixin after-line {display: block; content:''; left:60px; top: 0; position: absolute; width: 1.25px; height: 16px; background-color: #111;}
+@mixin control-border {border: 1px solid $color-gray-0;}
+@mixin buybtn {width: 100%; padding: 25.5px 0; border:5px; border: 1.5px solid $color-gray-6; font-weight: 500;}
+@mixin li-after {display: block; content: '';border-radius: 50%;width: 4px; height: 4px; position: absolute; left: -10px; top:7px; background:$color-gray-2;}
+
+@keyframes belt {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}

@@ -25,7 +25,7 @@ $color-gray-5:#333;
 $color-gray-6:#111;
 $color-white:#fff;
 
-@mixin check {border: 2px solid red;}
+@mixin check1 {border: 2px solid red;}
 @mixin check2 {border: 2px solid green;}
 @mixin check3 {border: 2px solid blue;}
 @mixin content_w {max-width: 1400px; min-width: 320px; margin: 0 auto;}

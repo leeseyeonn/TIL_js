@@ -1,142 +1,456 @@
 @use './common.scss' as *;
 
-/*----------------------------배너*/
-#banner {}
-#banner > span {}
 
+    #pop_up { display: none;
+        &.active {display: block;}
+        .pop_up_bg {
+            position: fixed;
+            opacity: 0.7;
+            z-index: 900;
+            width: 100%; height:100vh; 
+            background:$color-gray-6;
+        }
+        .pop_up_box {
+        position: absolute;
+        left: 50%;
+        top:45%;
+        transform: translate(-50%, -50%);    
+        background:$color-white;
+        border-radius: 10px;
+        padding: 25px; 
+
+        @include col;
+        align-items: flex-end;
+        width: 350px;
+        gap:15px;
+        z-index: 999;
+        #cancel {
+            @include icon18;
+            img {width: 100%;}
+        }
+        p {margin-bottom: 30px;
+            margin: 0 auto;
+            text-align: center;
+            font-size:$font-size-20;
+            font-weight:$font-weight-sb;
+        }
+        #share_icon {
+            margin: 0 auto;
+            @include row; gap:18px;
+            margin-bottom: 10px;
+            a { 
+                font-size:$font-size-14;
+                text-align: center;
+                color:$color-gray-3;
+            img {margin-bottom: 10px;}
+            }
+    }
+        }
+        }
+
+/*----------------------------배너*/
+#banner {
+    animation:belt 120s infinite;
+    overflow: hidden;
+    background:$color-gray-6;
+    a {width: max-content;
+        display: flex; flex-flow: row wrap;
+        align-items: center; justify-content: center;gap:150px;
+        padding: 15px 0;
+        span {color:$color-white;}
+    }
+}
+
+
+
+
+dl {
+    dt {font-size:$font-size-14; color:$color-gray-2; font-weight:$font-weight-m;}
+    dd {font-size:$font-size-14;}
+}
 /*----------------------------헤더*/
 /* 로고 */
-header {@include check1; @include row; justify-content: space-between; padding: 0 50px;}
-header .logo {width: 157px; height: 30px;}
-header .logo a {}
-header .logo a img {width: 100%;}
-/* 카테고리 */
-header .categorie {@include row; gap: 50px;}
-header .categorie a {font-weight:$font-weight-sb; padding: 20px 0; display: inline-block;}
-/* 계정 */
-header .account {@include row; gap:20px;}
-header .account a {padding: 20px 0; display: inline-block;}
-header .account a img {}
+header {
+    @include row;
+    justify-content: space-between;
+    padding: 0 50px;
+
+    .logo {
+        width: 157px;
+        height: 30px;
+
+        a {
+        img {width: 100%;}
+        }
+    }
+
+  /* 카테고리 */
+    .categorie {
+        @include row;
+        gap: 50px;
+
+        a {
+        font-weight:$font-weight-sb;
+        padding: 30px 0;
+        display: inline-block;
+        }
+    }
+
+  /* 계정 */
+    .account {
+        @include row;
+        gap:20px;
+
+        a {
+        padding: 20px 0;
+        display: inline-block;
+
+        img {}
+        }
+    }
+}
+
+/*--------------------------경로*/
+#MO_path {
+    padding: 40px 0;
+    @include content_w;
+
+    #path {
+        @include row;
+
+        img {width: 15px; height: 15px; fill:$color-gray-2; margin-right: 5px;}
+        a {
+            &:hover {opacity: 0.7;}
+        font-size:$font-size-12;
+
+        &:nth-child(2) {font-size:$font-size-12; color:$color-gray-2;}
+        }
+        span {font-size:$font-size-12; margin: 0 10px; color:$color-gray-2;}
+    }
+}
 
 /*--------------------------------------------- 메인 */
-main {}
-main section {}
-/*--------------------------경로*/
-main #MO_path {}
-main #MO_path #path {@include row;}
-main #MO_path #path img {width: 15px; height: 15px; fill:$color-gray-2;}
-main #MO_path #path a {font-size:$font-size-12;}
-main #MO_path #path a:nth-child(2) {font-size:$font-size-12; color:$color-gray-2;}
-main #MO_path #path span {font-size:$font-size-12; margin: 0 10px; color:$color-gray-2;}
+main {
+    @include grid;
+    @include content_w;
 
-/*--------------------------썸네일*/
-main #MO_thumbnail {}
-/* -----사이드 */
-main #MO_thumbnail #side {@include check1; line-height: 1; }
-main #MO_thumbnail #side #side_img {width:84px; height: 650px; @include check2;}
-main #MO_thumbnail #side #side_img .swiper-wrapper {}
-main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide {overflow: hidden;}
-main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide a {}
-main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide a img {width: 100%; height: 100%; object-fit: cover;border-radius: 10px;}
-main #MO_thumbnail .swiper-button-prev {@include slideBtn;}
-main #MO_thumbnail #side .swiper-button-next  {@include slideBtn;}
-main #MO_thumbnail #side .slidebtn {}
-main #MO_thumbnail #side .slidebtn svg {width: 8px;}
-main #MO_thumbnail #side .slidebtn path {color:$color-gray-4;}
+    section {}
 
-/* -----메인 */
-main #MO_thumbnail #main {}
-main #MO_thumbnail #main {}
-main #MO_thumbnail #main #main_img {}
-main #MO_thumbnail #main #main_img .swiper-wrapper {}
-main #MO_thumbnail #main #main_img .swiper-wrapper .swiper-slide {}
-main #MO_thumbnail #main #main_img .swiper-wrapper .swiper-slide a {}
-main #MO_thumbnail #main #main_img .swiper-wrapper .swiper-slide a img {}
-main #MO_thumbnail #main #main_img .swiper-wrapper .swiper-pagination {}
+    /*--------------------------썸네일*/
+    #MO_thumbnail {
+        
+        @include row;
+        gap: 30px;
 
-/*--------------------------콘텐츠*/
-main #MO_contents {}
-main #MO_contents .row {}
+    /* -----사이드 */
+    #side {position: relative;
+        &::after {
+            display: block; content: ''; 
+            width: 100%; height: 10%;
+            left: 0; bottom: -5px;
+            background: linear-gradient(to top, white 10%, transparent 100%);
+            position: absolute;
+            z-index: 500;
+        }
+        position: relative;
+        width:84px;
+        height: 650px;
 
-/* ----------1행 타이틀 */
-main #MO_contents .row1 {}
-main #MO_contents .row1 #title {}
-main #MO_contents .row1 #title h1 {}
-main #MO_contents .row1 #title a {}
-main #MO_contents .row1 #title a img {}
-main #MO_contents .row1 #title p {}
+        #side_img {
+            width:84px;
+            height: 650px;
+            position: relative;
 
-/* ----------2행 상품가 */
-main #MO_contents .row2 {}
-main #MO_contents .row2 {}
+            .swiper-wrapper {
+            .swiper-slide {
+                a {
+                    &:hover::after{
+                        display: block;
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background:$color-white;
+                        opacity: 0.3;
+                    }
+                img {
+                    &.active {border: 1.25px solid $color-gray-3;}
+                    width: 100%; height: 100%;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+                }
+            }
+            }
+        }
 
-main #MO_contents .row2 {}
-main #MO_contents .row2 #orignal_pirce {}
-main #MO_contents .row2 #orignal_pirce span {}
-main #MO_contents .row2 #discount {}
-main #MO_contents .row2 #discount .discount_rate {}
-main #MO_contents .row2 #discount .discount_rate em {}
-main #MO_contents .row2 #discount .discount_cost {}
-main #MO_contents .row2 #discount .discount_cost em {}
-main #MO_contents .row2 #discount .discount_target {}
-main #MO_contents .row2 #discount #discount_info {}
-main #MO_contents .row2 #discount #discount_info img {}
-main #MO_contents .row2 #discount p {}
-/* ----------3행 정보 카드 */
-main #MO_contents .row3 {}
-main #MO_contents .row3 .swiper {}
-main #MO_contents .row3 .swiper .swiper-wrapper {}
-main #MO_contents .row3 .swiper .swiper-slide {}
-main #MO_contents .row3 .swiper .swiper-slide dl {}
-main #MO_contents .row3 .swiper .swiper-slide dl dt {}
-main #MO_contents .row3 .swiper .swiper-slide dl dd {}
-main #MO_contents .row3 .swiper .swiper-slide .card1 {}
-main #MO_contents .row3 .swiper .swiper-slide .card1 img {}
-main #MO_contents .row3 .swiper .swiper-slide .card2 {}
-main #MO_contents .row3 .swiper .swiper-slide .card3 {}
-main #MO_contents .row3 .swiper .swiper-slide .card4 {}
-/* ----------4행 리뷰 */
-main #MO_contents .row4 {}
-main #MO_contents .row4 span {}
-main #MO_contents .row4 span img {}
-/* ----------5행 배송비 */
-main #MO_contents .row5 {}
-main #MO_contents .row5 dl {}
-main #MO_contents .row5 dl dt {}
-main #MO_contents .row5 dl dd {}
-/* ----------6행 상품 수량관리 */
-main #MO_contents .row6 {}
-main #MO_contents .row6 .product_title {}
-main #MO_contents .row6 .control {}
-main #MO_contents .row6 .control .control_btn {}
-main #MO_contents .row6 .control .control_btn span {}
-main #MO_contents .row6 .control .control_btn span em {}
-main #MO_contents .row6 .control #price {}
-main #MO_contents .row6 .control #price em {}
+        .slidebtn {
+            svg {width: 8px;}
+            path {color:$color-gray-4;}
+        }
+        }
+
+        .swiper-button-prev {@include slideBtn; top:-7px; left: 40%; transform: rotate(90deg);}
+        .swiper-button-next {@include slideBtn; top:7px; left: 62%;}
+    }
+
+  /* -----메인 */
+    #main {
+    position: relative;
+    @include mainimg;
+
+    #main_img {
+        @include mainimg;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+
+        .swiper-wrapper {
+            .swiper-slide {
+            a {
+                img {width: 100%; height: 100%; object-fit: cover;}
+            }
+            }
+        }
+
+        .swiper-pagination {bottom: 15px;}
+        .swiper-pagination-bullet-active {
+            background:$color-gray-5;
+            transform: scale(1.5);
+            opacity: 0.7;
+        }
+        }
+    }
+
+    /*--------------------------콘텐츠*/
+    #MO_contents {@include flex-main;
+    .row {}
+
+    /* ----------1행 타이틀 */
+    .row1 {
+        margin-bottom: 20px;
+        #title {
+            @include row;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            h1 {
+                font-size:$font-size-30;
+                line-height:$line-height-150;
+                font-weight:$font-weight-sb;
+            }
+            a {
+                margin-top: 10px;
+                img {}
+            }
+            
+        }
+        p {
+            font-size:$font-size-16;
+            color:$color-gray-4;
+            line-height:$line-height-150;
+        }
+    }
+
+    /* ----------2행 상품가 */
+    .row2 { position: relative;
+        p { display: none;
+            &.active {display: block;}
+            &::after {
+                background-image: url(../images/ico-bubble-toptip.svg);
+                background-repeat: no-repeat;
+                display: block; content: '';
+                width: 100%;
+                height: 100%;
+                left: 40%; top: -20%;
+                position: absolute;
+            }
+            @include border-line;
+            background:$color-white;
+            font-size:$font-size-12;
+            padding: 10px;
+            width: fit-content;
+            position: absolute;
+            right: -9%; top:110%;
+            }
+        #orignal_pirce {
+            margin-bottom:15px;
+            * {color:$color-gray-3;}
+            span:nth-child(1), del {
+                font-size:$font-size-20;
+                font-weight:$font-weight-m;
+            }
+            span:nth-child(2) {font-size:$font-size-14;}
+        }
+        #discount {
+            @include row; gap:5px;
+            .discount_rate, .discount_rate>em {
+                color:$color-point;
+                font-size:$font-size-24;
+                font-weight:$font-weight-sb;
+            }
+            .discount_cost, .discount_cost >em {
+                font-size:$font-size-24;
+                font-weight:$font-weight-sb;
+            }
+            .discount_target {font-size:$font-size-14; color:$color-gray-3;}
+            #discount_info { @include icon18;
+            img {width: 100%;}
+            }
+            
+        }
+        
+    }
+
+    /* ----------3행 정보 카드 */
+    .row3 {
+        #card {
+            .swiper-wrapper {
+                .swiper-slide {
+                    dl { @include row;
+                        dt {}
+                        dd {}
+                    }
+                }
+                .wrap1 { @include col;
+                    align-items: flex-start;
+                    img {@include icon40;}
+                    .card1 {@include col;
+                        align-items: flex-start;
+                        dt {}
+                        dd {}
+                    }
+                }
+            }
+        }
+    }
+
+    /* ----------4행 리뷰 */
+    .row4 {width: 100%;
+        .review_wrap {
+            margin-bottom: 20px;
+            @include row; gap: 10px;
+            span:nth-child(1) {position: relative;
+            &::after {@include after-line;}
+            img {}
+            }
+            .review_count {@include row; gap:5px;}
+            }
+        
+        .row5 {
+        border-bottom: 1px solid $color-gray-0;
+        border-top: 1px solid $color-gray-0; 
+        
+        dl {@include row; 
+            gap:50px;
+            padding:30px 0;
+            dt {}
+            dd {}
+        }
+    }
+    }
+
+    /* ----------5행 배송비 */
+    
+
+    /* ----------6행 상품 수량관리 */
+    .row6 {width: 100%; @include control-border; border-radius: 10px;
+        .price_wrap {padding:24px; 
+            .product_title {
+                font-weight:$font-weight-m;
+                margin-bottom: 40px;
+                
+            }
+            .control {
+                @include row;
+                justify-content: space-between;
+                
+                .control_btn {
+                    @include control-border;
+                    width: max-content;
+                    .count {
+                        input {
+                            width: 30px; height: 28px;
+                            text-align: center;
+                            border: 1px solid $color-gray-1;
+                        }
+                    }
+                }
+                button {
+                    width: 20px;
+                    height: 20px;
+                    line-height: 10px;
+                    font-size: $font-size-18;
+                }
+            #price, 
+            #price > em {
+                font-size: $font-size-20;
+                font-weight:$font-weight-sb;
+                
+            }
+        }
+    }}
 /* ----------7행 합계 */
-main #MO_contents .row7 {}
-main #MO_contents .row7 span {}
-main #MO_contents .row7 span em {}
-main #MO_contents .row7 #total {}
-main #MO_contents .row7 #total .total_price {}
-main #MO_contents .row7 #total .total_price em {}
-main #MO_contents .row7 #total .count {}
-/* ----------8행 최종 구매 버튼 */
-main #MO_contents .row8 {}
-main #MO_contents .row8 #favorite {}
-main #MO_contents .row8 #favorite img {}
-main #MO_contents .row8 .buy_btn {}
-main #MO_contents .row8 .buy_btn a {}
-main #MO_contents .row8 .buy_btn #cart {}
-main #MO_contents .row8 .buy_btn #buy_now {}
-/* ----------9행 세부사항 안내 */
-main #MO_contents .row9 {}
-main #MO_contents .row9 ul {}
-main #MO_contents .row9 ul li {}
-/* --------------팝업 */
-main #MO_contents #pop_up {}
-main #MO_contents #pop_up #cancel {}
-main #MO_contents #pop_up #cancel img {}
-main #MO_contents #pop_up #share_icon {}
-main #MO_contents #pop_up #share_icon a {}
-main #MO_contents #pop_up #share_icon a img {}
+    .row7 {
+        @include row;
+        justify-content: space-between;
+        width: 100%;
+        span, em {
+            font-weight:$font-weight-sb; 
+        }
+        #total {
+            .total_price,>em {
+                font-size:$font-size-30;
+            }
+            .count {}
+        }
+    }
+    
+
+    /* ----------8행 최종 구매 버튼 */
+    .row8 {
+        width: 100%;
+        @include row;
+        #favorite {
+            padding: 20px;
+            border: 1.5px solid $color-gray-6;
+            border-radius: 5px;
+            margin-right: 5px;
+            img {}
+        }
+        #cart {
+            @include buybtn;
+            border-radius: 5px 0 0 5px;
+            }
+        #buy_now {
+            @include buybtn;
+            border-radius: 0 5px 5px 0;
+            background-color:$color-gray-6;
+            color:$color-white;}
+    }
+
+    /* ----------9행 세부사항 안내 */
+    .row9 {
+        ul {
+            li {margin-left: 20px; position: relative;
+                &::after {
+                    @include li-after;
+                }
+            }
+            li,em {
+                color:$color-gray-3;
+                font-size:$font-size-12;
+                margin-bottom: 5px;
+                line-height:$line-height-150;
+                em {font-weight:$font-weight-m;}
+
+            }
+        }
+    }
+
+    /* --------------팝업 */
+    
+    }
+}
+
