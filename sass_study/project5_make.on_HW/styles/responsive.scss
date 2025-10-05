@@ -1,1 +1,80 @@
 @use './common.scss' as *;
+
+@media screen and (max-width:1024px){
+    #MO_path { display: none;}
+
+    header {
+        padding: 0 20px;
+
+        .logo {
+            width: 100px;
+            height: auto;
+            
+        }
+        .categorie {display: none;}
+
+        .account {
+            a:nth-child(1),
+            a:nth-child(3) {display: none;}
+
+            a:nth-child(4) {
+                display: block;
+                width:54px;
+                height: 26px;
+                border-radius: 30px;
+                padding: 0;
+                background:$color-gray-6;
+                color: #fff;
+                text-align: center;
+                line-height: 20px;
+            }
+
+        }
+    }
+
+    main {
+        max-width: none;
+        display: block;
+        #MO_thumbnail {
+            aspect-ratio: auto;
+            max-width: none;
+            #side {
+                display: none;
+            }
+
+            #main {
+                width:100%;
+                height: auto;
+
+            }
+        }
+
+
+        #MO_contents {
+            margin-left: 0;
+            margin-top: 30px;
+
+
+            .row3 {
+            #card {
+            .swiper-wrapper {
+            .swiper-slide {
+                width: 350px;
+                padding: 20px 30px;
+                min-height: 120px;
+
+                .card_wrap {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 5px;
+                }
+                .card2 {
+                    align-items: flex-start;
+                }
+            }
+            }
+            }
+            }
+        }
+    }
+}

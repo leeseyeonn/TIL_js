@@ -125,6 +125,8 @@ header .categorie a {
   font-weight: 600;
   padding: 30px 0;
   display: inline-block;
+  min-width: 0;
+  white-space: nowrap;
 }
 header {
   /* 계정 */
@@ -139,12 +141,16 @@ header .account a {
   padding: 20px 0;
   display: inline-block;
 }
+header .account a:nth-child(4) {
+  display: none;
+}
+
 /*--------------------------경로*/
 #MO_path {
-  padding: 40px 0;
   max-width: 1400px;
   min-width: 320px;
   margin: 0 auto;
+  padding: 0 20px 35px;
 }
 #MO_path #path {
   display: flex;
@@ -175,26 +181,75 @@ header .account a {
 
 /*--------------------------------------------- 메인 */
 main {
+  max-width: 1400px;
+  min-width: 320px;
+  margin: 0 auto;
   display: grid;
   align-items: start;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  max-width: 1400px;
-  min-width: 320px;
-  margin: 0 auto;
+  padding: 0 20px;
 }
 main {
   /*--------------------------썸네일*/
 }
 main #MO_thumbnail {
+  align-items: stretch;
   display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: 30px;
+  /*         align-items: flex-start; */
+  gap: 20px;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  aspect-ratio: 1/1.1;
+  /* width: 100%;
+  max-width: 680px;
+  height: auto;
+  @include check3;
+  @include row;
+  gap: 30px; */
   /* -----사이드 */
 }
 main #MO_thumbnail #side {
+  display: flex;
+  flex-flow: column nowrap;
   position: relative;
+  height: 100%;
+}
+main #MO_thumbnail #side .swiper-button-prev {
+  top: 5%;
+  transform: rotate(90deg) translateX(-50%);
+  left: 37%;
+}
+main #MO_thumbnail #side .swiper-button-next {
+  bottom: 0px;
+  /* transform: translateX(-50%); */
+  left: 60%;
+  width: 100%;
+  /* transform:translateX(50%); */
+}
+main #MO_thumbnail #side .slidebtn {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  border: 1px solid #666;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  z-index: 10;
+  border-radius: 50%;
+}
+main #MO_thumbnail #side .slidebtn svg {
+  width: 8px;
+}
+main #MO_thumbnail #side .slidebtn path {
+  color: #666;
+}
+main #MO_thumbnail #side {
+  /* position: relative;
+  width: 12%; 
+  max-width: 84px;
+  aspect-ratio: 1 / 7.7; */
 }
 main #MO_thumbnail #side::after {
   display: block;
@@ -202,19 +257,40 @@ main #MO_thumbnail #side::after {
   width: 100%;
   height: 10%;
   left: 0;
-  bottom: -5px;
-  background: linear-gradient(to top, white 10%, transparent 100%);
+  bottom: 5%;
+  background: linear-gradient(to top, #fff 10%, transparent 100%);
   position: absolute;
   z-index: 500;
 }
-main #MO_thumbnail #side {
-  position: relative;
-  width: 84px;
-  height: 650px;
-}
 main #MO_thumbnail #side #side_img {
+  height: auto;
+  width: 100%;
+  height: 90%;
+  margin: auto 0;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+main #MO_thumbnail #side #side_img .swiper-wrapper {
+  height: 100%;
+  margin: auto 0;
+  box-sizing: border-box;
+  /* display: flex;
+  flex-direction: column; */
+}
+main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide.active {
+  border: 1.5px solid #767676;
+  border-radius: 12px;
+}
+main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide {
+  height: auto !important;
+  /* margin-bottom: 8px !important; */
+}
+main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide a {
   width: 84px;
-  height: 650px;
+  height: 84px;
+  display: block;
   position: relative;
 }
 main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide a:hover::after {
@@ -227,57 +303,31 @@ main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide a:hover::after 
   left: 0;
   background: #fff;
   opacity: 0.3;
-}
-main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide a img.active {
-  border: 1.25px solid #767676;
-}
-main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide a img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   border-radius: 10px;
 }
-main #MO_thumbnail #side .slidebtn svg {
-  width: 8px;
-}
-main #MO_thumbnail #side .slidebtn path {
-  color: #666;
-}
-main #MO_thumbnail .swiper-button-prev {
-  border: 1px solid #999;
-  position: relative;
-  width: 24px;
-  height: 24px;
-  background-color: #fff;
-  border-radius: 50%;
-  top: -7px;
-  left: 40%;
-  transform: rotate(90deg);
-}
-main #MO_thumbnail .swiper-button-next {
-  border: 1px solid #999;
-  position: relative;
-  width: 24px;
-  height: 24px;
-  background-color: #fff;
-  border-radius: 50%;
-  top: 7px;
-  left: 62%;
+main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide a img {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 main {
   /* -----메인 */
 }
 main #main {
-  position: relative;
-  width: 508px;
-  height: 696px;
-}
-main #main #main_img {
-  width: 508px;
-  height: 696px;
-  position: relative;
+  width: 100%;
   border-radius: 20px;
   overflow: hidden;
+  height: 100%;
+  /* flex: 1;
+  width: max-content;    
+  margin-right: 30px;
+  position: relative;
+  @include mainimg; */
+}
+main #main #main_img {
+  width: 100%;
+  border-radius: 20px;
 }
 main #main #main_img .swiper-wrapper .swiper-slide a img {
   width: 100%;
@@ -285,7 +335,7 @@ main #main #main_img .swiper-wrapper .swiper-slide a img {
   object-fit: cover;
 }
 main #main #main_img .swiper-pagination {
-  bottom: 15px;
+  bottom: 5%;
 }
 main #main #main_img .swiper-pagination-bullet-active {
   background: #333;
@@ -296,10 +346,10 @@ main {
   /*--------------------------콘텐츠*/
 }
 main #MO_contents {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 30px;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-left: 30px;
 }
 main #MO_contents {
   /* ----------1행 타이틀 */
@@ -322,6 +372,9 @@ main #MO_contents .row1 #title h1 {
 main #MO_contents .row1 #title a {
   margin-top: 10px;
 }
+main #MO_contents .row1 #title a img {
+  margin-left: 50px;
+}
 main #MO_contents .row1 p {
   font-size: 1rem;
   color: #666;
@@ -332,34 +385,7 @@ main #MO_contents {
 }
 main #MO_contents .row2 {
   position: relative;
-}
-main #MO_contents .row2 p {
-  display: none;
-}
-main #MO_contents .row2 p.active {
-  display: block;
-}
-main #MO_contents .row2 p::after {
-  background-image: url(../images/ico-bubble-toptip.svg);
-  background-repeat: no-repeat;
-  display: block;
-  content: "";
-  width: 100%;
-  height: 100%;
-  left: 40%;
-  top: -20%;
-  position: absolute;
-}
-main #MO_contents .row2 p {
-  border: 1px solid #767676;
-  border-radius: 5px;
-  background: #fff;
-  font-size: 0.75rem;
-  padding: 10px;
-  width: fit-content;
-  position: absolute;
-  right: -9%;
-  top: 110%;
+  width: max-content;
 }
 main #MO_contents .row2 #orignal_pirce {
   margin-bottom: 15px;
@@ -396,22 +422,84 @@ main #MO_contents .row2 #discount .discount_target {
 main #MO_contents .row2 #discount #discount_info {
   width: 18px;
   height: 18px;
+  display: inline-block;
+  position: relative;
 }
 main #MO_contents .row2 #discount #discount_info img {
   width: 100%;
 }
+main #MO_contents .row2 p {
+  display: none;
+  position: absolute;
+  background-color: red;
+  top: 0;
+  right: 0;
+}
+main #MO_contents .row2 p.active {
+  display: block;
+}
+main #MO_contents .row2 p::after {
+  background-image: url(../images/ico-bubble-toptip.svg);
+  background-repeat: no-repeat;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 40%;
+  top: -20%;
+  position: absolute;
+}
+main #MO_contents .row2 p {
+  border: 1px solid #767676;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 0.75rem;
+  padding: 10px;
+  width: fit-content;
+  position: absolute;
+  right: -9%;
+  top: 110%;
+}
 main #MO_contents {
   /* ----------3행 정보 카드 */
 }
-main #MO_contents .row3 #card .swiper-wrapper .swiper-slide dl {
+main #MO_contents .row3 {
+  overflow: hidden;
+}
+main #MO_contents .row3 #card .swiper-wrapper .swiper-slide {
+  width: 420px;
+  margin-right: 10px;
+  background: #F6F6F6;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 16px 20px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+main #MO_contents .row3 #card .swiper-wrapper .swiper-slide .card_wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+main #MO_contents .row3 #card .swiper-wrapper .swiper-slide .card_wrap .head {
+  line-height: 150%;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #999;
+  flex-shrink: 0;
+}
+main #MO_contents .row3 #card .swiper-wrapper .swiper-slide .card_wrap .con {
+  line-height: 150%;
+  font-size: 0.75rem;
+}
+main #MO_contents .row3 #card .swiper-wrapper .swiper-slide .card2 {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
 }
 main #MO_contents .row3 #card .swiper-wrapper .wrap1 {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
   align-items: flex-start;
 }
 main #MO_contents .row3 #card .swiper-wrapper .wrap1 img {
@@ -423,6 +511,8 @@ main #MO_contents .row3 #card .swiper-wrapper .wrap1 .card1 {
   flex-flow: column nowrap;
   align-items: center;
   align-items: flex-start;
+  gap: 5px;
+  margin-left: 20px;
 }
 main #MO_contents {
   /* ----------4행 리뷰 */
@@ -482,6 +572,7 @@ main #MO_contents .row6 .price_wrap {
 main #MO_contents .row6 .price_wrap .product_title {
   font-weight: 500;
   margin-bottom: 40px;
+  line-height: 150%;
 }
 main #MO_contents .row6 .price_wrap .control {
   display: flex;
@@ -537,23 +628,29 @@ main #MO_contents .row8 {
 }
 main #MO_contents .row8 #favorite {
   padding: 20px;
-  border: 1.5px solid #111;
+  border: 1px solid #111;
   border-radius: 5px;
   margin-right: 5px;
+}
+main #MO_contents .row8 #cart:hover {
+  background: #F6F6F6;
 }
 main #MO_contents .row8 #cart {
   width: 100%;
   padding: 25.5px 0;
   border: 5px;
-  border: 1.5px solid #111;
+  border: 1px solid #111;
   font-weight: 500;
   border-radius: 5px 0 0 5px;
+}
+main #MO_contents .row8 #buy_now:hover {
+  background: #333;
 }
 main #MO_contents .row8 #buy_now {
   width: 100%;
   padding: 25.5px 0;
   border: 5px;
-  border: 1.5px solid #111;
+  border: 1px solid #111;
   font-weight: 500;
   border-radius: 0 5px 5px 0;
   background-color: #111;
@@ -588,6 +685,69 @@ main #MO_contents .row9 ul li em, main #MO_contents .row9 ul em em {
 }
 main #MO_contents {
   /* --------------팝업 */
+}
+
+@media screen and (max-width: 1024px) {
+  #MO_path {
+    display: none;
+  }
+  header {
+    padding: 0 20px;
+  }
+  header .logo {
+    width: 100px;
+    height: auto;
+  }
+  header .categorie {
+    display: none;
+  }
+  header .account a:nth-child(1),
+  header .account a:nth-child(3) {
+    display: none;
+  }
+  header .account a:nth-child(4) {
+    display: block;
+    width: 54px;
+    height: 26px;
+    border-radius: 30px;
+    padding: 0;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+  }
+  main {
+    max-width: none;
+    display: block;
+  }
+  main #MO_thumbnail {
+    aspect-ratio: auto;
+    max-width: none;
+  }
+  main #MO_thumbnail #side {
+    display: none;
+  }
+  main #MO_thumbnail #main {
+    width: 100%;
+    height: auto;
+  }
+  main #MO_contents {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+  main #MO_contents .row3 #card .swiper-wrapper .swiper-slide {
+    width: 350px;
+    padding: 20px 30px;
+    min-height: 120px;
+  }
+  main #MO_contents .row3 #card .swiper-wrapper .swiper-slide .card_wrap {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+  }
+  main #MO_contents .row3 #card .swiper-wrapper .swiper-slide .card2 {
+    align-items: flex-start;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

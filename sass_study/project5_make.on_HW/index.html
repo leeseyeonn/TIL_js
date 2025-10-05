@@ -5,14 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 | 메이크 온</title>
     <link rel="stylesheet" href="./styles/reset.css">
-    <!--플러그인 필수 css cdn 연결-->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!--플러그인 필수 JS cdn 연결-->
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="shortcut icon" href="https://play-lh.googleusercontent.com/H91LtWBeXC8rvlH5Oa45siiCX1pVp19N8gEEtzKCo6QUf8VIB4KyF1O0GJ1agRXz0w" type="image/x-icon">
     <link rel="stylesheet" href="./styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./scripts/index.js" defer></script>
 </head>
 <body>
@@ -60,6 +56,7 @@
             <a href="#"><img src="./images/icon_search.svg" alt=""></a>
             <a href="#"><img src="./images/icon_cart.svg" alt=""></a>
             <a href="#"><img src="./images/icon_account.svg" alt=""></a>
+            <a href="#"><!-- 모바일 로그인 페이지 --> •  •  • </a>
         </div>
     </header>
     <!-- 경로 -->
@@ -75,9 +72,9 @@
         <!-- 썸네일 -->
         <section id="MO_thumbnail">
             <div id="side">
-                <div class="swiper-button-prev slidebtn"></div>
+                <div class="swiper-button-prev slidebtn"></div>  
                 <div class="swiper" id="side_img">
-                    <div class="swiper-wrapper">    
+                    <div class="swiper-wrapper">  
                         <div class="swiper-slide "><a href="#"><img src="./images/product_1.jpg" alt=""></a></div>
                         <div class="swiper-slide"><a href="#"><img src="./images/product_2.jpg" alt=""></a></div>
                         <div class="swiper-slide"><a href="#"><img src="./images/product_3.jpg" alt=""></a></div>
@@ -120,7 +117,6 @@
             </div>
             <!-- 2행 -->
             <div class="row row2 cost">
-                <p>일반회원</p>
                 <div id="orignal_pirce">
                     <span><del>360,000</del>원</span>
                     <span>권장소비자가</span>
@@ -131,44 +127,46 @@
                     <span class="discount_target">WELCOME 혜택가</span>
                     <button type="button" id="discount_info"><img src="./images/icon_info.svg" alt=""></button>
                 </div>
+                <p>일반회원</p>
             </div>
             <!-- 3행 -->
             <div class="row row3 info">
-                <div class="swiper" id="card">
-                    <!--슬라이드시작-->
-                    <div class="swiper-wrapper">
-                        <!-- 슬라이드1 -->
-                        <div class="swiper-slide wrap1">
-                            <img src="./images/membership_benefit_logo.png" alt="">
-                            <dl class="card1">
-                                <dt>멤버십 혜택</dt>
-                                <dd>메이크온 뷰티디바이스 구매 시 ON-CARE 즉시 승급 + 평생 유지!      * 회원 전용, 비회원(네이버페이) 결제 시 제외</dd>
-                            </dl>
-                        </div>
-                        <!-- 슬라이드2 -->
-                        <div class="swiper-slide wrap2">
-                            <dl>
-                                <dt>상품설명</dt>
-                                <dd>ON-CARE 혜택은 회원 전용으로, 네이버페이 결제 고객(비회원)에게는 적용되지 않습니다.</dd>
-                            </dl>
-                        </div>
-                        <!-- 슬라이드3 -->
-                        <div class="swiper-slide wrap3">
-                            <dl>
-                                <dt>배송안내</dt>
-                                <dd>배송비 3,000원 (50,000원 이상 구매 시 무료)</dd>
-                            </dl>
-                        </div>
-                        <!-- 슬라이드4 -->
-                        <div class="swiper-slide wrap4">
-                            <dl>
-                                <dt>출시년일</dt>
-                                <dd>2025년 4월</dd>
-                            </dl>
-                        </div>
+        <div class="swiper" id="card">
+            <!--슬라이드시작-->
+            <div class="swiper-wrapper">
+                <!-- 슬라이드1 -->
+                <div class="swiper-slide wrap1">
+                    <img src="./images/membership_benefit_logo.png" alt="">
+                    <div class="card_wrap card1">
+                        <div class="head">멤버십 혜택</div>
+                        <div class="con">메이크온 뷰티디바이스 구매 시 ON-CARE 즉시 승급 + 평생 유지!      * 회원 전용, 비회원(네이버페이) 결제 시 제외</div>
+                    </div>
+                </div>
+                <!-- 슬라이드2 -->
+                <div class="swiper-slide wrap2">
+                    <div class="card_wrap card2">
+                        <div class="head">상품설명</div>
+                        <div class="con">ON-CARE 혜택은 회원 전용으로, 네이버페이 결제 고객(비회원)에게는 적용되지 않습니다.</div>
+                    </div>
+                </div>
+                <!-- 슬라이드3 -->
+                <div class="swiper-slide wrap3">
+                    <div class="card_wrap card3">
+                        
+                        <div class="head">배송안내</div>
+                        <div class="con">배송비 3,000원 (50,000원 이상 구매 시 무료)</div>
+                    </div>
+                </div>
+                <!-- 슬라이드4 -->
+                <div class="swiper-slide wrap4">
+                    <div class="card_wrap card4">
+                        <div class="head">출시년일</div>
+                        <div class="con">2025년 4월</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
             <!-- 4행 -->
             <div class="row row4 review">
                 <div class="review_wrap">
@@ -223,7 +221,8 @@
                 </ul>
             </div>
             <!-- 팝업 -->
-            
+        </section>
     </main>
+    
 </body>
 </html>
