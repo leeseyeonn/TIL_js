@@ -11,7 +11,7 @@
             background:$color-gray-6;
         }
         .pop_up_box {
-        position: absolute;
+        position: fixed;
         left: 50%;
         top:45%;
         transform: translate(-50%, -50%);    
@@ -50,7 +50,11 @@
 
 /*----------------------------배너*/
 #banner {
-    animation:belt 120s infinite;
+    position: fixed;
+    height: 46px ;
+    top: 0; left: 0;
+    z-index: 800;
+    animation:belt 300s infinite;
     overflow: hidden;
     background:$color-gray-6;
     a {width: max-content;
@@ -71,10 +75,14 @@ dl {
 /*----------------------------헤더*/
 /* 로고 */
 header {
+    position: fixed;
+    top: 46px; left: 0;
     @include row;
+    width: 100%;
     justify-content: space-between;
     padding: 0 50px;
-
+    background-color: #fff;
+    z-index: 800;
     .logo {
         width: 157px;
         height: 30px;
@@ -116,7 +124,7 @@ header {
 /*--------------------------경로*/
 #MO_path {
     @include content_w;
-    padding: 0 20px 35px;
+    padding: 128px 20px 35px;
 
     #path {
         @include row;
@@ -136,7 +144,7 @@ header {
 main {  
     @include content_w;
     @include grid-con;
-    padding: 0 20px;
+    padding: 0 20px 50px;
     section {}
 
     /*--------------------------썸네일*/
@@ -229,6 +237,7 @@ main {
                 &.active {
                     border: 1.5px solid $color-gray-3;
                     border-radius: 12px;
+                    box-sizing: border-box;
                 }
                 height: auto !important; 
                 /* margin-bottom: 8px !important; */
@@ -321,7 +330,7 @@ main {
                 line-height:$line-height-150;
                 font-weight:$font-weight-sb;
             }
-            a {
+            #share_btn {
                 margin-top: 10px;
                 img {margin-left: 50px;}
             }
@@ -492,6 +501,7 @@ main {
                     @include control-border;
                     width: max-content;
                     .count {
+                            
                         input {
                             width: 30px; height: 28px;
                             text-align: center;
@@ -539,7 +549,10 @@ main {
             border: 1px solid $color-gray-6;
             border-radius: 5px;
             margin-right: 5px;
-            img {}
+            img {
+                width: 24px;
+                height: 24px;
+            }
         }
         #cart {
             &:hover {background:$color-gray-1;}

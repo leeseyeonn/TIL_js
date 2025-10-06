@@ -22,7 +22,7 @@
   background: #111;
 }
 #pop_up .pop_up_box {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
@@ -70,7 +70,12 @@
 
 /*----------------------------배너*/
 #banner {
-  animation: belt 120s infinite;
+  position: fixed;
+  height: 46px;
+  top: 0;
+  left: 0;
+  z-index: 800;
+  animation: belt 300s infinite;
   overflow: hidden;
   background: #111;
 }
@@ -99,11 +104,17 @@ dl dd {
 /*----------------------------헤더*/
 /* 로고 */
 header {
+  position: fixed;
+  top: 46px;
+  left: 0;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  width: 100%;
   justify-content: space-between;
   padding: 0 50px;
+  background-color: #fff;
+  z-index: 800;
 }
 header .logo {
   width: 157px;
@@ -150,7 +161,7 @@ header .account a:nth-child(4) {
   max-width: 1400px;
   min-width: 320px;
   margin: 0 auto;
-  padding: 0 20px 35px;
+  padding: 128px 20px 35px;
 }
 #MO_path #path {
   display: flex;
@@ -188,7 +199,7 @@ main {
   align-items: start;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  padding: 0 20px;
+  padding: 0 20px 50px;
 }
 main {
   /*--------------------------썸네일*/
@@ -282,6 +293,7 @@ main #MO_thumbnail #side #side_img .swiper-wrapper {
 main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide.active {
   border: 1.5px solid #767676;
   border-radius: 12px;
+  box-sizing: border-box;
 }
 main #MO_thumbnail #side #side_img .swiper-wrapper .swiper-slide {
   height: auto !important;
@@ -369,10 +381,10 @@ main #MO_contents .row1 #title h1 {
   line-height: 150%;
   font-weight: 600;
 }
-main #MO_contents .row1 #title a {
+main #MO_contents .row1 #title #share_btn {
   margin-top: 10px;
 }
-main #MO_contents .row1 #title a img {
+main #MO_contents .row1 #title #share_btn img {
   margin-left: 50px;
 }
 main #MO_contents .row1 p {
@@ -632,6 +644,10 @@ main #MO_contents .row8 #favorite {
   border-radius: 5px;
   margin-right: 5px;
 }
+main #MO_contents .row8 #favorite img {
+  width: 24px;
+  height: 24px;
+}
 main #MO_contents .row8 #cart:hover {
   background: #F6F6F6;
 }
@@ -717,6 +733,7 @@ main #MO_contents {
     line-height: 20px;
   }
   main {
+    padding-top: 128px;
     max-width: none;
     display: block;
   }
