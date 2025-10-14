@@ -1,0 +1,19 @@
+#wrap {}
+
+#wrap main {}
+#wrap main h1 {
+    height: 80vh; text-align: center; /* line-height: 80vh; */
+    font-size: 2rem; font-weight: 700; padding-top: 20%; line-height: 1.5;
+}
+
+#wrap main #web_project {
+    border:2px solid black; width: 800px; height: 300px;
+}
+#wrap main #web_project .swiper-wrapper .swiper-slide:nth-child(odd) {
+    background:blue ;
+}
+#wrap main #web_project .swiper-wrapper .swiper-slide:nth-child(even) {
+    background:pink;
+}
+
+

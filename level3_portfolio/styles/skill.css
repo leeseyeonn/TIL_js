@@ -1,0 +1,8 @@
+#wrap {}
+#wrap main h1 {text-align: center; 
+    height: 30vh; text-align: center; line-height: 30vh;
+    font-size: 2rem; font-weight: 700;}
+#wrap main dl {max-width: 800px; min-width: 800px; margin:0 auto; background: lemonchiffon;}
+#wrap main dl * {line-height: 1.7; padding: 15px 0 10px;}
+#wrap main dl dt {font-weight: 700;}
+#wrap main dl dd {padding-left: 20px;}
